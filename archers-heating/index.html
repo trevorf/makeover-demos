@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<!-- Photos, all from Archers Heating & Plumbing Ltd's own website (www.archersheating.co.uk):
+  img/engineer-appliance.jpg  https://static.wixstatic.com/media/293ebf_82c9d187c35bfa2e4d78487392200c7f.jpg  (plumbing page)
+  img/cistern-repair.jpg      https://static.wixstatic.com/media/293ebf_829efa037dfc8bddbda583fbe990c2a6.jpg  (plumbing page)
+  img/sludged-pipe.jpg        https://static.wixstatic.com/media/293ebf_4ee5b771cf2a44f17dbd095b76920307.jpg  (power flushing page)
+  img/showroom.jpg            https://static.wixstatic.com/media/293ebf_f7379a264f2c4815b6e00f9da1166922~mv2.jpg  (homepage)
+  img/engineer-portrait.jpg   https://static.wixstatic.com/media/293ebf_f73246fe1cd85a2d95136b3da887b49d.jpg  (power flushing page, rotated upright)
+  img/bwc-certificate.jpg     https://static.wixstatic.com/media/293ebf_1b0dde3ef749921d3525f25af8fa58f1.jpg  (blog page)
+  No logo image exists on their site; the name is set as styled text. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Archers Heating &amp; Plumbing – website concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: straight-talking local gas engineers; prices agreed before work starts.
+   IDEA: a warm home and a safe boiler, from a Gas Safe team you can ring right now.
+   PICTURE: their own engineer at work in the hero, then real jobs, the showroom and the Trading Standards certificate.
+   COLOUR and TYPE: deep boiler-room navy, pilot-flame orange, copper-pipe warm neutrals; Archivo + Public Sans.
+   LAYOUT: sticky call bar, navy hero, trust strip, service grid, work gallery, reviews, landlords, area, contact, preview banner. */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0b1622);--ink:light-dark(#132033,#e7edf4);--soft:light-dark(#4a5869,#a7b4c4);
+--navy:#0e2740;--navy2:#16385a;--flame:#f28c3a;--flame-ink:#1d1206;
+--mist:light-dark(#eef3f8,#122236);--copper:light-dark(#a24f1c,#e7a06c);--line:light-dark(#dbe3ec,#22344a);
+--card:light-dark(#ffffff,#102033)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1622;--ink:#e7edf4;--soft:#a7b4c4;--mist:#122236;--copper:#e7a06c;--line:#22344a;--card:#102033}}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Public Sans",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,"Public Sans",sans-serif;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(34px,5.2vw,56px);font-weight:800}
+h2{font-size:clamp(28px,3.6vw,40px);font-weight:800}
+h3{font-size:19px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(44px,6vw,92px) max(5vw,16px)}
+.eyebrow{display:block;font:700 13px/1.2 Archivo,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin-bottom:12px}
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:#fff;color:var(--navy);padding:8px max(5vw,16px);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;flex-direction:column;justify-content:center;height:76px;text-decoration:none;color:var(--navy);line-height:1;border-radius:6px}
+.brand b{font:800 34px/1 Archivo,sans-serif;letter-spacing:.04em}
+.brand b i{font-style:normal;color:#c4621f}
+.brand span{font:600 12.5px/1 "Public Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;margin-top:6px;color:#3d5068}
+.nav{display:flex;gap:26px;font-weight:600;font-size:15.5px}
+.nav a{text-decoration:none;color:#24384f}
+.nav a:hover{color:#c4621f}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 22px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:17px;cursor:pointer;font-family:inherit}
+.btn svg{width:19px;height:19px;flex:none}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--flame);outline-offset:3px}
+.call{background:var(--flame);color:var(--flame-ink)}
+.call:hover{background:#f79d52}
+.ghost{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.top .call{min-height:46px;padding:8px 16px;font-size:16px}
+.top .num{white-space:nowrap}
+/* hero */
+.hero{background:var(--navy);color:#fff;padding-bottom:0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:auto -10% -40% auto;width:60%;aspect-ratio:1;background:radial-gradient(closest-side,rgba(242,140,58,.20),transparent);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:clamp(24px,4vw,56px);align-items:end;position:relative}
+.hero .copy{padding-bottom:clamp(36px,6vw,84px)}
+.hero .eyebrow{color:#f7b07a}
+.hero p.lead{font-size:19px;color:#d3deea;margin:18px 0 28px;max-width:34em}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px}
+.hero small{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:22px;color:#b5c5d6;font-size:15px}
+.hero small b{color:#fff;font-weight:600}
+.scene{margin:0;position:relative;aspect-ratio:4/4.4;width:100%;border-radius:20px 20px 0 0;overflow:hidden;background:var(--navy2)}
+.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 30%;display:block}
+.scene figcaption{position:absolute;left:14px;bottom:14px;background:rgba(14,39,64,.86);color:#fff;font-size:14px;font-weight:600;padding:8px 12px;border-radius:8px}
+/* trust strip */
+.trust{background:var(--navy2);color:#fff;padding:22px max(5vw,16px)}
+.trust ul{list-style:none;margin:0 auto;padding:0;max-width:1180px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.trust li{display:flex;gap:12px;align-items:center;font-size:15px;color:#d3deea;line-height:1.35}
+.trust li b{display:block;color:#fff;font-size:16px}
+.trust svg{flex:none;width:30px;height:30px;color:var(--flame)}
+/* services */
+.svc-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end}
+.svc-head p{color:var(--soft)}
+.grid{margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.card svg{width:34px;height:34px;color:var(--copper);margin-bottom:6px}
+.card p{color:var(--soft);font-size:16px}
+.card ul{margin:4px 0 0;padding-left:18px;color:var(--soft);font-size:15.5px}
+/* gallery */
+.work{background:var(--mist)}
+.gal{margin-top:30px;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.4fr);grid-template-rows:repeat(2,minmax(0,290px));gap:14px}
+.gal figure{margin:0;position:relative;border-radius:16px;overflow:hidden;background:var(--line)}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal .g3{grid-row:1/3;grid-column:1}
+.gal .g2 img{object-position:50% 58%}.gal .g1 img{object-position:30% 50%}
+.gal figcaption{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(14,39,64,.86);color:#fff;font-size:14px;font-weight:500;padding:8px 12px;border-radius:10px}
+/* why */
+.why .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center}
+.why figure{margin:0;position:relative;aspect-ratio:960/656;border-radius:18px;overflow:hidden}
+.why figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pledge{font-family:Archivo,sans-serif;font-size:clamp(22px,2.6vw,30px);line-height:1.22;font-weight:700;margin-top:6px}
+.facts{display:grid;gap:16px;margin-top:26px}
+.fact{display:flex;gap:14px;align-items:flex-start}
+.fact b{display:block}
+.fact span{color:var(--soft);font-size:16px}
+.tick{flex:none;width:26px;height:26px;border-radius:50%;background:var(--flame);color:var(--flame-ink);display:grid;place-items:center;margin-top:1px}
+.tick svg{width:14px;height:14px}
+/* reviews */
+.reviews{background:var(--navy);color:#fff}
+.reviews .eyebrow{color:#f7b07a}
+.reviews h2+p{color:#b5c5d6;margin-top:12px}
+.quotes{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.quotes blockquote{margin:0;background:var(--navy2);border-radius:16px;padding:26px;display:flex;flex-direction:column;gap:16px}
+.quotes blockquote::before{content:"\201C";font:800 54px/0.6 Archivo,sans-serif;color:var(--flame);height:22px}
+.quotes p{font-size:17px;color:#e8eef5}
+.quotes cite{margin-top:auto;font-style:normal;font-weight:600;color:#b5c5d6;font-size:15px}
+/* landlords */
+.landlords .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,5vw,64px);align-items:start}
+.landlords p{color:var(--soft);margin-top:14px}
+.panel{background:var(--mist);border-radius:18px;padding:clamp(22px,3vw,32px)}
+.panel ul{margin:12px 0 0;padding-left:20px;display:grid;gap:8px}
+/* area */
+.area{padding-top:0}
+.area .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;border-top:1px solid var(--line);padding-top:clamp(44px,6vw,80px)}
+.area p{color:var(--soft);margin-top:14px}
+.pins{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pins span{padding:8px 16px;border-radius:999px;background:var(--mist);font-weight:600;font-size:15.5px}
+.pins span:first-child{background:var(--navy);color:#fff}
+.room{margin:0}
+.room div{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--mist)}
+.room img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.room figcaption,.cap{margin-top:10px;font-size:14px;color:var(--soft)}
+/* contact */
+.contact{background:var(--navy);color:#fff}
+.contact .eyebrow{color:#f7b07a}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px)}
+.contact dl{margin:26px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 18px}
+.contact dt{color:#b5c5d6}
+.contact dd{margin:0;font-weight:600}
+.contact dd a{text-decoration-color:var(--flame);text-underline-offset:4px;text-decoration-thickness:2px}
+form{background:#fff;color:#132033;border-radius:18px;padding:clamp(20px,3vw,32px);display:grid;gap:14px;align-self:start}
+form h3{color:var(--navy);font-size:22px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,textarea,select{font:16px/1.4 "Public Sans",sans-serif;padding:12px 14px;border:1.5px solid #c9d3de;border-radius:10px;background:#fff;color:#132033;min-height:48px;width:100%}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+form .btn{background:var(--navy);color:#fff;width:100%}
+form .note{font-size:14px;color:#4a5869}
+.out{display:none;background:#fff3e8;border-radius:10px;padding:14px;font-size:15px}
+.out.on{display:block}
+/* footer */
+footer{padding:28px max(5vw,16px) 0;color:var(--soft);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-bottom:24px}
+.preview{background:var(--flame);color:var(--flame-ink);text-align:center;padding:12px max(5vw,16px);font-size:15px;font-weight:600}
+@media(max-width:980px){.nav{display:none}.trust ul{grid-template-columns:repeat(2,minmax(0,1fr))}.grid,.quotes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){
+.hero .wrap,.svc-head,.why .wrap,.landlords .wrap,.area .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+.hero .copy{padding-bottom:8px}
+.scene{aspect-ratio:4/3}
+.gal{grid-template-columns:minmax(0,1fr);grid-template-rows:none;grid-auto-rows:auto}
+.gal figure{aspect-ratio:4/3}.gal .g3{grid-row:auto;aspect-ratio:3/4}
+}
+@media(max-width:620px){.grid,.quotes{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:520px){
+.brand{height:58px}.brand b{font-size:26px}.brand span{font-size:10px;letter-spacing:.1em;margin-top:5px}
+.top .num{display:none}.row2{grid-template-columns:minmax(0,1fr)}.hero .acts .btn{flex:1 1 100%}
+.trust ul{grid-template-columns:minmax(0,1fr);gap:14px}
+.gal figcaption{font-size:13px;padding:6px 9px;left:8px;right:8px;bottom:8px}
+.contact dl{grid-template-columns:minmax(0,1fr);gap:2px}.contact dd{margin-bottom:12px}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+</svg>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top" aria-label="Archers Heating and Plumbing Ltd, back to top"><b>ARCH<i>E</i>RS</b><span>Heating &amp; Plumbing Ltd</span></a>
+  <nav class="nav" aria-label="Main"><a href="#services">Services</a><a href="#landlords">Landlords</a><a href="#reviews">Reviews</a><a href="#quote">Contact</a></nav>
+  <a class="btn call" href="tel:01793871558" aria-label="Call 01793 871558"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call <span class="num">01793 871558</span></a>
+</div></header>
+
+<section class="band hero" id="top"><div class="wrap">
+  <div class="copy">
+    <span class="eyebrow">Gas Safe registered · Peatmoor, Swindon</span>
+    <h1>Heating, boiler and plumbing engineers in Swindon</h1>
+    <p class="lead">From a brand-new central heating system to a leaky tap. We service, repair and install boilers, gas fires and cookers, power flush radiators and handle every kind of plumbing job, and we tell you exactly how you'll be charged before we start.</p>
+    <div class="acts">
+      <a class="btn call" href="tel:01793871558"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 01793 871558</a>
+      <a class="btn ghost" href="#quote">Get a free quote</a>
+    </div>
+    <small><span><b>24-hour emergency:</b> <a href="tel:07882009058">07882 009058</a></span><span>Gas Safe reg. 547506</span></small>
+  </div>
+  <figure class="scene"><img src="img/engineer-appliance.jpg" width="1600" height="1200" alt="Archers engineer in a branded Gas Safe polo shirt kneeling beside a tumble dryer while connecting an appliance" fetchpriority="high"><figcaption>Our engineer at work in a Swindon home</figcaption></figure>
+</div></section>
+
+<section class="trust" aria-label="Accreditations"><ul>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2 2 21h20L12 2zm0 4.3L18.7 19H5.3L12 6.3z"/></svg><div><b>Gas Safe registered</b>Registration 547506</div></li>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M12 2.5 4 5.5v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10v-6l-8-3z"/><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m8.5 12 2.5 2.5 4.5-5"/></svg><div><b>Trading Standards approved</b>Buy With Confidence member 95070313</div></li>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 4h16v16H4z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M8 9h8M8 13h8M8 17h5"/></svg><div><b>Price agreed up front</b>No surprises at the end of the job</div></li>
+  <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M12 7v5l3 2"/></svg><div><b>24-hour emergency line</b>Plumbing emergencies, day or night</div></li>
+</ul></section>
+
+<section class="band" id="services"><div class="wrap">
+  <div class="svc-head">
+    <div><span class="eyebrow">What we do</span><h2>Domestic heating, plumbing and gas appliances</h2></div>
+    <p>No heating job is too large or too small. We'll look at your system, explain the options for your home and budget, and give you a no-obligation quote.</p>
+  </div>
+  <div class="grid">
+    <article class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M8 7h8M12 17.5c-1.4 0-2.3-1-2.3-2.2 0-1.6 2.3-3.3 2.3-3.3s2.3 1.7 2.3 3.3c0 1.2-.9 2.2-2.3 2.2z"/></svg>
+      <h3>Boiler installation and replacement</h3>
+      <p>A-rated condensing combi and system boilers, fitted by Gas Safe engineers with a fixed-price quote. We fit all quality brands and prefer Worcester Bosch.</p>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>
+      <h3>Boiler servicing and breakdowns</h3>
+      <p>Yearly servicing keeps your boiler reliable, efficient and safe, and we repair breakdowns on all types of central heating system.</p>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 21.5c-3.6 0-6-2.5-6-5.8 0-4.2 4-6.4 4.6-11.2 2.6 2 3 4.3 2.7 6.3 1-.6 1.8-1.7 2-2.9 1.8 1.9 2.7 4.1 2.7 6.2 0 4.4-2.4 7.4-6 7.4z"/></svg>
+      <h3>Gas fires, cookers and hobs</h3>
+      <p>Installation, servicing and annual safety checks. Our gas fire service includes a leak test, full strip and clean, pressure and safety-device tests and a flue check.</p>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M5 4v16M9 4v16M13 4v16M17 4v16M3 7h18M3 17h18"/></svg>
+      <h3>Power flushing</h3>
+      <p>Cold spots in the middle of your radiators? A power flush clears sludge and scale so your heating warms up properly and costs less to run.</p>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 9h7a3 3 0 0 1 3 3v2M14 14v1.5M4 6v6M14 18.5c0 1.2.9 2 2 2s2-.8 2-2c0-1.4-2-3.5-2-3.5"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M11 9V5h4"/></svg>
+      <h3>Plumbing and bathrooms</h3>
+      <p>All aspects of plumbing, from leaks to complete bathroom installations, starting with a free, no-obligation visit to talk through your plans.</p>
+    </article>
+    <article class="card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="2.5" width="16" height="19" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="13.5" r="4.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M7.5 6h2"/></svg>
+      <h3>Appliance installation</h3>
+      <p>Washing machines, dishwashers and other white goods, including American-style fridges, connected properly. We can take the old machine away too.</p>
+    </article>
+  </div>
+</div></section>
+
+<section class="band work" id="work"><div class="wrap">
+  <span class="eyebrow">On the job</span>
+  <h2>Real work, by our own engineers</h2>
+  <div class="gal">
+    <figure class="g1"><img src="img/cistern-repair.jpg" width="1600" height="829" loading="lazy" alt="Archers engineer in a branded Gas Safe polo repairing the fill valve inside a toilet cistern"><figcaption>Repairing a cistern fill valve</figcaption></figure>
+    <figure class="g2"><img src="img/sludged-pipe.jpg" width="1600" height="1200" loading="lazy" alt="Section of copper heating pipe held up to show it almost blocked with rust-coloured sludge"><figcaption>Sludge from a heating system, the reason we power flush</figcaption></figure>
+    <figure class="g3"><img src="img/engineer-portrait.jpg" width="567" height="756" loading="lazy" alt="Archers engineer in a black Archers Heating and Plumbing polo with a Gas Safe badge"><figcaption>Gas Safe engineer</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band why"><div class="wrap">
+  <div>
+    <span class="eyebrow">Why Archers</span>
+    <p class="pledge">When you book, we tell you exactly how you'll be charged before we start. The price covers the whole job, so there are no nasty surprises at the end.</p>
+    <div class="facts">
+      <div class="fact"><i class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>Any change agreed with you first</b><span>If something unforeseen changes the price, we discuss it and agree it with you before carrying on.</span></div></div>
+      <div class="fact"><i class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>Manufacturer's warranty on installations</b><span>Every installation we fit is covered by the manufacturer's warranty.</span></div></div>
+      <div class="fact"><i class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>Trading Standards approved</b><span>Members of the Buy With Confidence scheme, membership 95070313.</span></div></div>
+      <div class="fact"><i class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>Happy to talk it through</b><span>We're always available to speak to customers. To book an engineer, just call.</span></div></div>
+    </div>
+  </div>
+  <div>
+    <figure><img src="img/bwc-certificate.jpg" width="960" height="656" loading="lazy" alt="Matthew Archer holding the Buy With Confidence certificate of membership for Archers Heating and Plumbing Ltd while shaking hands at the presentation"></figure>
+    <p class="cap">Matthew Archer receiving our Buy With Confidence certificate.</p>
+  </div>
+</div></section>
+
+<section class="band reviews" id="reviews"><div class="wrap">
+  <span class="eyebrow">What customers say</span>
+  <h2>Recommended by Swindon homeowners</h2>
+  <p>Comments sent to us by letter, email, Facebook and Twitter.</p>
+  <div class="quotes">
+    <blockquote><p>When our boiler needed replacing Archers Heating came to the rescue; competitive pricing, fitting us in at short notice and really going the extra mile to make sure the job was done perfectly mean I would wholeheartedly recommend them.</p><cite>Paul Rubery</cite></blockquote>
+    <blockquote><p>Rang them today with a boiler problem, turned up within the hour… problem sorted. Next time you need a plumber, make sure these are top of your list.</p><cite>Owen Berry</cite></blockquote>
+    <blockquote><p>Matthew came promptly and told us that our boiler needed replacing as it was dangerous. He showed us the problem and we agreed with him. He turned up with the new boiler when he said he would. His work was clean and very professional.</p><cite>David Hartley</cite></blockquote>
+  </div>
+</div></section>
+
+<section class="band landlords" id="landlords"><div class="wrap">
+  <div>
+    <span class="eyebrow">Landlords and letting agents</span>
+    <h2>Gas safety certificates at short notice</h2>
+    <p>We're experienced in the rented property sector and offer landlords and letting agents fast-response plumbing, heating and gas engineering. We liaise with tenants and fit in around their plans, and we keep you informed with a full breakdown of options and costs.</p>
+    <p>Property managers and other bulk buyers can call us to discuss discounted pricing.</p>
+  </div>
+  <div class="panel">
+    <h3>For landlords we also cover</h3>
+    <ul>
+      <li>Central heating servicing and repair</li>
+      <li>Gas boiler installation and service</li>
+      <li>Gas cooker and gas fire installation</li>
+      <li>Power flushing</li>
+      <li>Emergency call-outs</li>
+      <li>Washing machine and dishwasher installation</li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="band area"><div class="wrap">
+  <div>
+    <span class="eyebrow">Where we work</span>
+    <h2>Based in Peatmoor, covering Swindon and North Wiltshire</h2>
+    <p>Our office is on Tower Road in Peatmoor, west Swindon. We work across the town and the surrounding towns and villages.</p>
+    <div class="pins"><span>Swindon</span><span>Royal Wootton Bassett</span><span>Chippenham</span><span>Highworth</span><span>Malmesbury</span><span>Cricklade</span><span>Cirencester</span><span>Faringdon</span><span>Lechlade</span></div>
+  </div>
+  <figure class="room"><div><img src="img/showroom.jpg" width="960" height="342" loading="lazy" alt="Archers showroom with wall-mounted Worcester Bosch boilers, a hot water cylinder, a sink unit and display boards"></div><figcaption>Our showroom, with Worcester Bosch boilers and controls on display.</figcaption></figure>
+</div></section>
+
+<section class="band contact" id="quote"><div class="wrap">
+  <div>
+    <span class="eyebrow">Get in touch</span>
+    <h2>Get a free quote</h2>
+    <p style="color:#d3deea;margin-top:14px">Call, email, or send a few details below and we'll get back to you.</p>
+    <dl>
+      <dt>Office</dt><dd><a href="tel:01793871558">01793 871558</a></dd>
+      <dt>Mobile</dt><dd><a href="tel:07775793108">07775 793108</a></dd>
+      <dt>24-hour emergency</dt><dd><a href="tel:07882009058">07882 009058</a></dd>
+      <dt>Email</dt><dd><a href="mailto:sales@archersheating.co.uk">sales@archersheating.co.uk</a></dd>
+      <dt>Address</dt><dd>28 Tower Road, Peatmoor, Swindon, Wiltshire SN5 5BG</dd>
+    </dl>
+  </div>
+  <form id="qf" novalidate>
+    <h3>Tell us what you need</h3>
+    <div class="row2">
+      <label>Your name<input id="qn" name="name" autocomplete="name" required></label>
+      <label>Phone<input id="qp" name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <label>What do you need?
+      <select id="qs" name="service"><option>New or replacement boiler</option><option>Boiler service or repair</option><option>Gas fire or cooker</option><option>Power flush</option><option>Plumbing or bathroom</option><option>Appliance installation</option><option>Landlord gas safety certificate</option><option>Something else</option></select>
+    </label>
+    <label>A few details<textarea id="qd" name="details" placeholder="What's happening, your boiler make if you know it, and your postcode"></textarea></label>
+    <button class="btn" type="submit">Email my enquiry</button>
+    <p class="note">This opens your email app with your enquiry filled in, addressed to sales@archersheating.co.uk. For anything urgent, call 01793 871558.</p>
+    <div class="out" id="qo" role="status"></div>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 Archers Heating &amp; Plumbing Ltd. Registered in England &amp; Wales, company no. 08300659. Gas Safe registration 547506.</span>
+  <span>28 Tower Road, Peatmoor, Swindon SN5 5BG</span>
+</div></footer>
+<div class="preview">Concept preview prepared for Archers Heating &amp; Plumbing Ltd by <a href="https://trevelyn.co.uk" style="color:inherit">Trevelyn</a>. Not the official website.</div>
+
+<script>
+{
+  const f=document.getElementById('qf'),o=document.getElementById('qo');
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    const body=`Name: ${v('qn')}\nPhone: ${v('qp')}\nService: ${v('qs')}\n\n${v('qd')}`;
+    const href='mailto:sales@archersheating.co.uk?subject='+encodeURIComponent('Quote request: '+v('qs'))+'&body='+encodeURIComponent(body);
+    o.textContent='';
+    const p=document.createElement('p');p.textContent='Your email app should open with this enquiry filled in. Nothing has been sent yet: press send in your email app. If it didn\'t open, email sales@archersheating.co.uk or call 01793 871558.';
+    const a=document.createElement('a');a.href=href;a.textContent='Open the email again';a.style.fontWeight='700';
+    o.append(p,a);o.classList.add('on');
+    location.href=href;
+  });
+}
+</script>
+</body>
+</html>

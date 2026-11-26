@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!-- Photos: all from The Plaster Master's own website (their own work, resized and lightly levelled)
+  img/logo.png               https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/plastermasterlogomod.jpg
+  img/hero-skimming.jpg      https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/DSC00075m.jpg
+  img/stairwell-after.jpg    https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/DSC00057.jpg
+  img/mark.jpg               https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/DSC00018m.jpg (About us page)
+  img/lounge-before.jpg      https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/reducedresoulution/DSC000013.jpg (Portfolio)
+  img/lounge-after.jpg       https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/reducedresoulution/DSC000036.jpg (Portfolio)
+  img/stairwell-before.jpg   https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/reducedresoulution/DSC000046.jpg (Portfolio)
+  img/conservatory-before.jpg https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/reducedresoulution/DSC000074.jpg (Portfolio)
+  img/conservatory-after.jpg https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/reducedresoulution/DSC000144.jpg (Portfolio)
+  img/wall-before.jpg        https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/reducedresoulution/DSC000052.jpg (Portfolio)
+  img/wall-after.jpg         https://www.theplastermaster.co.uk/sitebuildercontent/sitebuilderpictures/reducedresoulution/DSC000097.jpg (Portfolio)
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>The Plaster Master – website concept</title>
+<meta name="description" content="Plastering, skimming, artex covering and rendering across Swindon and 30 miles around. Free, no-obligation quotes from Mark Pannell.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a straight-talking Swindon plasterer who cares about mess as much as finish.
+   IDEA: before and after. Their own portfolio photos prove the work better than any claim.
+   PICTURE: Mark on the tools in the hero, then real before/after pairs from past jobs.
+   COLOUR and TYPE: the teal of their logo, fresh-plaster pink and warm skim-coat white; Bricolage Grotesque + Public Sans.
+   LAYOUT: sticky call bar, teal hero band, services list, before/after pairs, promises, about Mark, area, contact, preview banner. */
+:root{color-scheme:light dark;
+--bg:light-dark(#fcfaf7,#121918);--ink:light-dark(#1b2523,#e9efed);--soft:light-dark(#4f5c59,#a8b7b3);
+--teal:#1f4f4a;--teal2:#2c6a63;--logo:#44857d;
+--skim:light-dark(#f4ebe4,#1c2624);--skim-ink:light-dark(#7a5a4a,#d6b9a8);
+--pink:#e9a184;--pink-deep:#c9714f;--line:light-dark(#e6ddd5,#2a3734)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Public Sans",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",sans-serif;line-height:1.06;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(36px,5.6vw,60px);font-weight:800}
+h2{font-size:clamp(28px,3.6vw,42px);font-weight:800}
+h3{font-size:20px;font-weight:600}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(44px,6vw,92px) max(5vw,18px)}
+.eyebrow{display:inline-block;font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:14px}
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:#fff;color:var(--teal);padding:8px max(5vw,18px);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:block;line-height:0;border-radius:6px}
+.brand img{height:76px;width:auto;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;font-size:17px;cursor:pointer;font-family:inherit;line-height:1.2}
+.btn svg{width:19px;height:19px;flex:none}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.call{background:var(--pink);color:#2a1710}
+.call:hover{background:#f0b398}
+.ghost{border-color:currentColor;color:inherit;background:transparent}
+.ghost:hover{background:rgba(255,255,255,.08)}
+.top .call{min-height:44px;padding:8px 16px;font-size:16px}
+.top .num{white-space:nowrap}
+/* hero */
+.hero{background:var(--teal);color:#fff;padding-bottom:0;position:relative}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:end}
+.hero .copy{padding-bottom:clamp(36px,6vw,84px)}
+.hero .eyebrow{color:var(--pink)}
+.hero p.lead{font-size:19px;color:#d4e6e2;margin:20px 0 28px;max-width:33em}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px}
+.hero small{display:block;margin-top:20px;color:#b3d1cb;font-size:15px}
+.hero small a{color:#fff;font-weight:600;text-decoration-color:var(--pink);text-underline-offset:3px}
+.scene{margin:0;position:relative;aspect-ratio:5/4;width:100%;border-radius:22px 22px 0 0;overflow:hidden;background:var(--teal2)}
+.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%;display:block}
+.scene figcaption{position:absolute;left:14px;bottom:14px;background:rgba(18,42,39,.84);color:#fff;font-size:14px;font-weight:500;padding:8px 12px;border-radius:10px}
+/* proof strip */
+.strip{background:var(--teal2);color:#fff;padding:16px max(5vw,18px)}
+.strip ul{list-style:none;margin:0 auto;padding:0;max-width:1180px;display:flex;flex-wrap:wrap;gap:10px 30px;justify-content:space-between}
+.strip li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px}
+.strip svg{width:20px;height:20px;color:var(--pink);flex:none}
+/* services */
+.svc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px)}
+.svc .intro p{color:var(--soft);margin-top:16px}
+.key{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+.key li{padding:20px 0;border-top:1px solid var(--line)}
+.key p{color:var(--soft);margin-top:5px;font-size:16px}
+.key h3::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--pink);margin-right:10px;transform:translateY(-2px)}
+/* before / after */
+.work{background:var(--skim)}
+.work .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 32px}
+.work .head p{color:var(--soft);max-width:30em}
+.pairs{margin-top:32px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.pair{margin:0;background:var(--bg);border-radius:18px;padding:10px;box-shadow:0 1px 0 rgba(0,0,0,.04),0 10px 30px -18px rgba(40,30,20,.35)}
+.pair .ims{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.ph{position:relative;margin:0;aspect-ratio:4/3;border-radius:11px;overflow:hidden;background:var(--line)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.tag{position:absolute;top:8px;left:8px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:rgba(20,28,27,.78);color:#fff}
+.tag.after{background:var(--pink);color:#2a1710}
+.pair figcaption{padding:14px 8px 6px}
+.pair figcaption b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:19px;font-weight:600}
+.pair figcaption span{color:var(--soft);font-size:15.5px}
+/* promises */
+.promise .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.quote{margin:0;font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(24px,2.8vw,32px);line-height:1.22;font-weight:600;color:var(--ink)}
+.quote::before{content:"\201C";display:block;font-size:80px;line-height:.6;color:var(--pink);margin-bottom:10px}
+.quote cite{display:block;font:500 15px/1.4 "Public Sans",sans-serif;color:var(--skim-ink);margin-top:16px;font-style:normal}
+.quote2{margin-top:30px;padding-top:24px;border-top:1px solid var(--line);color:var(--soft)}
+.quote2 cite{display:block;font-style:normal;font-weight:600;color:var(--skim-ink);font-size:15px;margin-top:8px}
+.facts{display:grid;gap:18px}
+.fact{display:flex;gap:16px;align-items:flex-start}
+.fact b{display:block;font-size:18px}
+.fact span{color:var(--soft);font-size:16px}
+.ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--skim);color:var(--pink-deep);display:grid;place-items:center}
+.ic svg{width:22px;height:22px}
+/* about */
+.about{background:var(--teal);color:#fff}
+.about .wrap{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);gap:clamp(28px,5vw,72px);align-items:center}
+.portrait{margin:0;position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:var(--teal2)}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.about .eyebrow{color:var(--pink)}
+.about p{color:#d4e6e2;margin-top:16px;max-width:36em}
+.about p.sig{color:#fff;font-weight:600}
+/* area */
+.area .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.area p{color:var(--soft);margin-top:14px}
+.pins{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pins span{padding:8px 16px;border-radius:999px;background:var(--skim);font-weight:600;font-size:15.5px}
+.pins span.home{background:var(--teal);color:#fff}
+.map{margin:0;aspect-ratio:4/3;position:relative;border-radius:18px;overflow:hidden;background:var(--skim)}
+.map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.map figcaption{position:absolute;left:12px;bottom:12px;right:12px;background:rgba(18,42,39,.84);color:#fff;font-size:14px;font-weight:500;padding:8px 12px;border-radius:10px;width:fit-content}
+/* contact */
+.contact{background:var(--teal);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px)}
+.contact .lead{color:#d4e6e2;margin-top:14px}
+.contact dl{margin:26px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 18px}
+.contact dt{color:#b3d1cb}
+.contact dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.contact dd a{text-decoration-color:var(--pink);text-underline-offset:4px}
+form{background:#fff;color:#1b2523;border-radius:18px;padding:clamp(20px,3vw,32px);display:grid;gap:14px}
+form h3{color:var(--teal);font-size:22px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,textarea,select{font:16px/1.4 "Public Sans",sans-serif;padding:12px 14px;border:1.5px solid #d3d9d7;border-radius:10px;background:#fff;color:#1b2523;min-height:48px;width:100%}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+form .btn{background:var(--teal);color:#fff;width:100%}
+form .btn:hover{background:var(--teal2)}
+.note{font-size:14px;color:#55625f}
+.out{display:none;background:#f4ebe4;border-radius:10px;padding:14px;font-size:15px}
+.out.on{display:block}
+.out p{margin-bottom:6px}
+/* footer */
+footer{padding:28px max(5vw,18px) 0;color:var(--soft);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-bottom:24px}
+.preview{background:var(--pink);color:#2a1710;text-align:center;padding:12px max(5vw,18px);font-size:15px;font-weight:600}
+@media(max-width:900px){
+.hero .wrap,.svc,.promise .wrap,.about .wrap,.area .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+.hero .copy{padding-bottom:8px}
+.scene{aspect-ratio:4/3}
+.pairs{grid-template-columns:minmax(0,1fr)}
+.portrait{max-width:420px;aspect-ratio:1/1}
+}
+@media(max-width:600px){.key{grid-template-columns:minmax(0,1fr)}.strip ul{flex-direction:column}}
+@media(max-width:520px){.brand img{height:58px}.top .num{display:none}.row2{grid-template-columns:minmax(0,1fr)}.hero .acts .btn{flex:1 1 100%}.scene figcaption,.map figcaption{font-size:13px;left:8px;bottom:8px}.tag{font-size:11px;top:6px;left:6px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l7 3v5c0 4.6-3 8.6-7 10-4-1.4-7-5.4-7-10V6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M7 3h7l5 5v13H7z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M14 3v5h5M10 13h6M10 17h6"/></symbol>
+  <symbol id="i-sheet" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 17c3-1 6-1 9 0s6 1 9 0M3 12c3-1 6-1 9 0s6 1 9 0M4 7h16"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M14.5 9.2a2.6 2.6 0 0 0-4.7 1.5c0 2.5 4.4 1.6 4.4 4.1a2.6 2.6 0 0 1-4.8 1.3M12 6.5v1.4M12 16.2v1.3"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17" cy="9" r="2.6" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3 19c.6-3.2 3-5 6-5s5.4 1.8 6 5M15.5 14.2c2.6-.4 4.9 1.1 5.5 4.3"/></symbol>
+</svg>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top"><img src="img/logo.png" width="444" height="150" alt="The Plaster Master, plastering contractor"></a>
+  <a class="btn call" href="tel:07809209109" aria-label="Call Mark on 07809 209109"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call <span class="num">07809 209109</span></a>
+</div></header>
+
+<main>
+<section class="band hero" id="top"><div class="wrap">
+  <div class="copy">
+    <span class="eyebrow">Swindon plastering contractor</span>
+    <h1>Plastering, skimming and rendering across Swindon</h1>
+    <p class="lead">From a small repair to a whole house: reskims, reboarding, artex ceilings made smooth, extensions, rendering and pebbledash. Homes and commercial work, inside and out, within 30 miles of Swindon.</p>
+    <div class="acts">
+      <a class="btn call" href="tel:07809209109"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call Mark 07809 209109</a>
+      <a class="btn ghost" href="#quote">Get a free quote</a>
+    </div>
+    <small>Free, no-obligation quotes · Or call the Swindon number, <a href="tel:01793526482">01793 526482</a></small>
+  </div>
+  <figure class="scene"><img src="img/hero-skimming.jpg" width="1600" height="1200" alt="Mark kneeling to skim a freshly boarded wall in a customer's home, with the finished pink plaster drying beside him" fetchpriority="high"><figcaption>Mark on the tools, skimming new plasterboard</figcaption></figure>
+</div></section>
+
+<div class="strip"><ul>
+  <li><svg aria-hidden="true"><use href="#i-check"/></svg>Free written quotes</li>
+  <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fully insured</li>
+  <li><svg aria-hidden="true"><use href="#i-check"/></svg>No deposits, pay when it's finished</li>
+  <li><svg aria-hidden="true"><use href="#i-check"/></svg>Furnishings protected, waste taken away</li>
+</ul></div>
+
+<section class="band" id="services"><div class="wrap svc">
+  <div class="intro">
+    <span class="eyebrow">What we do</span>
+    <h2>Smooth walls and ceilings, from one room to the whole house</h2>
+    <p>Tired of looking at that old artex ceiling, or pebbledash that's gone a bit bald? Whatever the job, you get a smooth, sound finish ready for decorating, and a house left as tidy as we found it.</p>
+  </div>
+  <ul class="key">
+    <li><h3>Reskims</h3><p>A fresh skim coat over tired, cracked or uneven walls and ceilings.</p></li>
+    <li><h3>Artex ceilings</h3><p>Old artex replaced with a modern, flat plastered ceiling.</p></li>
+    <li><h3>Reboarding and overboarding</h3><p>Blown or water-damaged ceilings taken back and boarded again.</p></li>
+    <li><h3>Extensions and conservatories</h3><p>New rooms boarded, dot-and-dabbed and plastered to finish.</p></li>
+    <li><h3>Rendering and pebbledash</h3><p>Exterior walls stripped back, scratch-coated and re-rendered.</p></li>
+    <li><h3>Repairs and renovations</h3><p>Patching after old tiles, dado rails or leaks, through to full renovations.</p></li>
+  </ul>
+</div></section>
+
+<section class="band work" id="work"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Before and after</span><h2>Real jobs, start to finish</h2></div>
+    <p>Every photo here is from a job The Plaster Master has done. No stock pictures.</p>
+  </div>
+  <div class="pairs">
+    <figure class="pair">
+      <div class="ims">
+        <div class="ph"><img src="img/lounge-before.jpg" width="1200" height="900" loading="lazy" alt="Tired-looking lounge ceiling before the work, with visible joins across it"><span class="tag">Before</span></div>
+        <div class="ph"><img src="img/lounge-after.jpg" width="1200" height="900" loading="lazy" alt="The same lounge ceiling after overboarding and plastering, smooth and flat"><span class="tag after">After</span></div>
+      </div>
+      <figcaption><b>Tired lounge ceiling</b><span>Battens removed, joists located, the ceiling overboarded and plastered.</span></figcaption>
+    </figure>
+    <figure class="pair">
+      <div class="ims">
+        <div class="ph"><img src="img/stairwell-before.jpg" width="1200" height="900" loading="lazy" alt="Stairwell wall with blown plaster showing bare brick where a dado rail was removed"><span class="tag">Before</span></div>
+        <div class="ph"><img src="img/stairwell-after.jpg" width="1200" height="900" loading="lazy" alt="The same stairwell replastered in smooth pink plaster, ready for decorating"><span class="tag after">After</span></div>
+      </div>
+      <figcaption><b>Blown stairwell walls</b><span>Hollows dubbed out after a dado rail came off, then replastered ready to decorate.</span></figcaption>
+    </figure>
+    <figure class="pair">
+      <div class="ims">
+        <div class="ph"><img src="img/conservatory-before.jpg" width="1200" height="900" loading="lazy" alt="Conservatory roof timbers and insulation boards exposed before boarding"><span class="tag">Before</span></div>
+        <div class="ph"><img src="img/conservatory-after.jpg" width="1200" height="900" loading="lazy" alt="The finished plastered conservatory ceiling with identical, symmetrical panels"><span class="tag after">After</span></div>
+      </div>
+      <figcaption><b>Conservatory roof</b><span>Fully insulated, boarded and plastered, with every panel kept symmetrical.</span></figcaption>
+    </figure>
+    <figure class="pair">
+      <div class="ims">
+        <div class="ph"><img src="img/wall-before.jpg" width="1200" height="900" loading="lazy" alt="Front garden wall with badly cracked, blown render"><span class="tag">Before</span></div>
+        <div class="ph"><img src="img/wall-after.jpg" width="1200" height="900" loading="lazy" alt="The same garden wall freshly rendered with a smooth finish coat"><span class="tag after">After</span></div>
+      </div>
+      <figcaption><b>Cracked garden wall</b><span>Taken back to the brickwork, scratch-coated, then given a new finish coat.</span></figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section class="band promise"><div class="wrap">
+  <div>
+    <span class="eyebrow">What customers say</span>
+    <blockquote class="quote">He did a fantastic job, was completely trustworthy, cleaned up after himself and finished on time ready for us to move in.<cite>Mr and Mrs A B, Swindon, who had every artex ceiling in the house plastered over</cite></blockquote>
+    <blockquote class="quote2" style="margin-left:0;margin-right:0">"Both my wife and myself were very happy with the standard of plastering that was completed at our house in our new extension. You are very friendly and easy to get on with."<cite>Chris and Clare Smith</cite></blockquote>
+  </div>
+  <div class="facts">
+    <h2 style="margin-bottom:6px">The only plaster you'll see is on your walls</h2>
+    <div class="fact"><span class="ic"><svg aria-hidden="true"><use href="#i-doc"/></svg></span><div><b>A written quote, free</b><span>Once we've seen the job you get a written quotation, with no obligation.</span></div></div>
+    <div class="fact"><span class="ic"><svg aria-hidden="true"><use href="#i-coin"/></svg></span><div><b>Nothing up front</b><span>No deposits and no money for materials. You pay when the work is finished.</span></div></div>
+    <div class="fact"><span class="ic"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><div><b>Clean and tidy</b><span>Carpets, curtains and furnishings protected, dust kept down and all waste taken away.</span></div></div>
+    <div class="fact"><span class="ic"><svg aria-hidden="true"><use href="#i-shield"/></svg></span><div><b>Fully insured</b><span>Reliable service at competitive rates, finished in the time agreed.</span></div></div>
+    <div class="fact"><span class="ic"><svg aria-hidden="true"><use href="#i-team"/></svg></span><div><b>A small team, face to face</b><span>Two plasterers, so you deal with the people doing the work.</span></div></div>
+  </div>
+</div></section>
+
+<section class="band about" id="about"><div class="wrap">
+  <figure class="portrait"><img src="img/mark.jpg" width="1200" height="1318" loading="lazy" alt="Mark Pannell, proprietor of The Plaster Master, holding a plastering trowel and hawk"></figure>
+  <div>
+    <span class="eyebrow">About us</span>
+    <h2>Meet Mark, The Plaster Master</h2>
+    <p>Mark Pannell started in the trade in the early 1980s, labouring for a local plasterer before moving onto the tools. Today The Plaster Master is a small team of two plasterers, offering a reliable service at a competitive price.</p>
+    <p>Much of the work comes from people who have used us before, and from their friends and family. Planning a bigger project? Just ask and we'll put you in touch with bricklayers, plumbers, carpenters, decorators, tilers and kitchen fitters.</p>
+    <p class="sig">Mark Pannell, proprietor</p>
+  </div>
+</div></section>
+
+<section class="band area" id="area"><div class="wrap">
+  <div>
+    <span class="eyebrow">Where we work</span>
+    <h2>Swindon and 30 miles around</h2>
+    <p>Based in Swindon, we cover a 30 mile radius, including these towns and everywhere in between.</p>
+    <div class="pins"><span class="home">Swindon</span><span>Cirencester</span><span>Lechlade</span><span>Burford</span><span>Faringdon</span><span>Hungerford</span><span>Marlborough</span><span>Calne</span><span>Devizes</span><span>Chippenham</span><span>Malmesbury</span></div>
+  </div>
+  <figure class="map"><img src="img/stairwell-after.jpg" width="1200" height="900" loading="lazy" alt="Freshly plastered stairwell, smooth and even, drying before decoration"><figcaption>Ready to decorate once it's dry</figcaption></figure>
+</div></section>
+
+<section class="band contact" id="quote"><div class="wrap">
+  <div>
+    <span class="eyebrow" style="color:var(--pink)">Free, no-obligation quote</span>
+    <h2>Tell Mark about your job</h2>
+    <p class="lead">Call, email, or send a few details and we'll get back to you as soon as we can.</p>
+    <dl>
+      <dt>Mobile</dt><dd><a href="tel:07809209109">07809 209109</a></dd>
+      <dt>Phone</dt><dd><a href="tel:01793526482">01793 526482</a></dd>
+      <dt>Email</dt><dd><a href="mailto:tpmplastering@yahoo.co.uk">tpmplastering@yahoo.co.uk</a></dd>
+      <dt>Area</dt><dd>Swindon and 30 miles around</dd>
+    </dl>
+  </div>
+  <form id="qf" novalidate>
+    <h3>Ask for a free quote</h3>
+    <div class="row2">
+      <label>Your name<input id="qn" name="name" autocomplete="name" required></label>
+      <label>Phone<input id="qp" name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <label>What do you need?
+      <select id="qs" name="service"><option>Reskim walls or ceilings</option><option>Cover an artex ceiling</option><option>Reboard or overboard a ceiling</option><option>Extension or conservatory</option><option>Rendering or pebbledash</option><option>Repair</option><option>Something else</option></select>
+    </label>
+    <label>A few details<textarea id="qd" name="details" placeholder="Which rooms, rough sizes, and your town or village"></textarea></label>
+    <button class="btn" type="submit">Email my enquiry</button>
+    <p class="note">This opens your own email app with the details filled in, addressed to tpmplastering@yahoo.co.uk.</p>
+    <div class="out" id="qo" role="status"></div>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>The Plaster Master · Mark Pannell, plastering contractor, Swindon</span>
+  <span><a href="tel:07809209109">07809 209109</a> · <a href="tel:01793526482">01793 526482</a></span>
+</div></footer>
+<div class="preview">Concept preview prepared for The Plaster Master by <a href="https://trevelyn.co.uk" style="color:inherit">Trevelyn</a>. Not the official website.</div>
+
+<script>
+{
+  const f=document.getElementById('qf'),o=document.getElementById('qo');
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    const body=`Name: ${v('qn')}\nPhone: ${v('qp')}\nJob: ${v('qs')}\n\n${v('qd')}`;
+    const href='mailto:tpmplastering@yahoo.co.uk?subject='+encodeURIComponent('Quote request: '+v('qs'))+'&body='+encodeURIComponent(body);
+    o.textContent='';
+    const p=document.createElement('p');p.textContent='Your email app should open with this enquiry filled in. Nothing has been sent yet. If it doesn\'t open, email tpmplastering@yahoo.co.uk or call Mark on 07809 209109.';
+    const a=document.createElement('a');a.href=href;a.textContent='Open the email again';a.style.fontWeight='600';
+    o.append(p,a);o.classList.add('on');
+    location.href=href;
+  });
+}
+</script>
+</body>
+</html>
