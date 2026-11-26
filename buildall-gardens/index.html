@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- Photos: Buildall Gardens project photos supplied by Trevor (from buildallgardens.co.uk/projects-gallery.html) -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Buildall Gardens – website concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: friendly local garden builder, confident and plain-spoken.
+   IDEA: let their finished gardens do the selling.
+   PICTURE: their own pergola garden photo in the hero, then a gallery of recent work.
+   COLOUR and TYPE: hedge green field, sandstone paving, marigold accent; Familjen Grotesk + Figtree.
+   LAYOUT: sticky call bar, green hero band, services as a planting-key list, contact band, preview banner. */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0f1a14);--ink:light-dark(#18241c,#e8efe9);--soft:light-dark(#4b5a50,#a9b8ad);
+--hedge:#1d4a33;--hedge2:#2f6b47;--leaf:#5f9e5a;--stone:light-dark(#efe9dc,#1c2a21);--stone-ink:light-dark(#6d6250,#c9bea8);
+--mari:#f2b233;--line:light-dark(#e3ddd0,#2a3a2f)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Figtree,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Familjen Grotesk",Figtree,sans-serif;line-height:1.08;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5.4vw,54px);font-weight:700}
+h2{font-size:clamp(28px,3.6vw,40px);font-weight:700}
+h3{font-size:20px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(40px,6vw,88px) max(5vw,18px)}
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:#fff;color:var(--hedge);padding:8px max(5vw,18px);box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:block;line-height:0;border-radius:6px}
+.brand img{height:76px;width:auto;display:block}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;font-size:17px;cursor:pointer;font-family:inherit}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--mari);outline-offset:3px}
+.call{background:var(--mari);color:#1b1a10}
+.ghost{border-color:currentColor;color:inherit;background:transparent}
+.top .call{min-height:44px;padding:8px 16px;font-size:16px}
+.top .num{white-space:nowrap}
+/* hero */
+.hero{background:var(--hedge);color:#fff;padding-bottom:0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(24px,4vw,56px);align-items:end}
+.hero .copy{padding-bottom:clamp(36px,6vw,80px)}
+.hero p.lead{font-size:19px;color:#d8e8db;margin:18px 0 28px;max-width:34em}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px}
+.hero small{display:block;margin-top:18px;color:#b9d2bf;font-size:15px}
+.scene{margin:0;position:relative;aspect-ratio:4/5;width:100%;border-radius:22px 22px 0 0;overflow:hidden;background:#2f6b47}
+.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* services */
+.svc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px)}
+.svc .intro p{color:var(--soft);margin-top:16px}
+.key{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.key li{padding:18px 0;border-top:1px solid var(--line)}
+.key li:last-child{border-bottom:1px solid var(--line)}
+.key p{color:var(--soft);margin-top:4px}
+/* scale */
+.scale{background:var(--stone)}
+.scale .wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,4vw,48px);align-items:center}
+.quote{font-family:"Familjen Grotesk",sans-serif;font-size:clamp(24px,3vw,34px);line-height:1.2;font-weight:500;color:var(--ink)}
+.quote cite{display:block;font:500 15px/1.4 Figtree,sans-serif;color:var(--stone-ink);margin-top:14px;font-style:normal}
+.facts{display:grid;gap:14px}
+.fact{display:flex;gap:14px;align-items:flex-start}
+.fact b{display:block}
+.fact span{color:var(--soft);font-size:16px}
+.dot{flex:none;width:14px;height:14px;border-radius:50%;background:var(--leaf);margin-top:7px;box-shadow:0 0 0 4px color-mix(in srgb,var(--leaf) 25%,transparent)}
+/* area */
+.area .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center}
+.area p{color:var(--soft);margin-top:14px}
+.pins{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pins span{padding:8px 16px;border-radius:999px;background:var(--stone);font-weight:600;font-size:16px}
+.map{margin:0;aspect-ratio:4/3;position:relative;border-radius:18px;overflow:hidden}
+.map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.work{padding-top:0}
+.gal{margin-top:28px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-rows:repeat(2,minmax(0,300px));gap:14px}
+.gal figure{margin:0;position:relative;border-radius:16px;overflow:hidden;background:var(--stone)}
+.gal .g1{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal figcaption{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(16,32,22,.82);color:#fff;font-size:14px;font-weight:500;padding:8px 12px;border-radius:10px}
+/* contact */
+.contact{background:var(--hedge);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px)}
+.contact dl{margin:24px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 18px}
+.contact dt{color:#b9d2bf}
+.contact dd{margin:0;font-weight:600}
+.contact dd a{text-decoration-color:var(--mari);text-underline-offset:4px}
+form{background:#fff;color:#18241c;border-radius:18px;padding:clamp(20px,3vw,32px);display:grid;gap:14px}
+form h3{color:var(--hedge)}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,textarea,select{font:16px/1.4 Figtree,sans-serif;padding:12px 14px;border:1.5px solid #cfd8d1;border-radius:10px;background:#fff;color:#18241c;min-height:48px;width:100%}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+form .btn{background:var(--hedge);color:#fff;width:100%}
+.out{display:none;background:#eef5ef;border-radius:10px;padding:14px;font-size:15px}
+.out.on{display:block}
+/* footer */
+footer{padding:28px max(5vw,18px) 0;color:var(--soft);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-bottom:24px}
+.preview{background:var(--mari);color:#1b1a10;text-align:center;padding:12px max(5vw,18px);font-size:15px;font-weight:600}
+@media(max-width:860px){
+.hero .wrap,.svc,.scale .wrap,.area .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+.hero .copy{padding-bottom:8px}
+.scene{aspect-ratio:4/3}
+.gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:240px}.gal .g1{grid-row:span 2}
+}
+@media(max-width:520px){.brand img{height:58px}.gal figcaption{font-size:13px;padding:6px 9px;left:8px;right:8px;bottom:8px}.top .num{display:none}.row2{grid-template-columns:minmax(0,1fr)}.hero .acts .btn{flex:1 1 100%}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top"><img src="img/logo.png" width="169" height="120" alt="Buildall Gardens Ltd"></a>
+  <a class="btn call" href="tel:01793323288" aria-label="Call 01793 323 288">Call <span class="num">01793 323 288</span></a>
+</div></header>
+
+<section class="band hero" id="top"><div class="wrap">
+  <div class="copy">
+    <h1>Garden design and build in Swindon and Royal Wootton Bassett</h1>
+    <p class="lead">Your garden is as important as any room in your home. We plan and build patios, decking, water features and garden buildings, and look after gardens once they're done.</p>
+    <div class="acts">
+      <a class="btn call" href="tel:01793323288">Call 01793 323 288</a>
+      <a class="btn ghost" href="#quote">Get a free quote</a>
+    </div>
+    <small>Open Monday to Saturday, 9am to 6pm · Mobile 07739 650 402</small>
+  </div>
+  <figure class="scene"><img src="img/pergola.jpg" width="562" height="750" alt="Finished garden with a black pergola over a raised seating deck, stepping-stone path across the lawn and rendered raised beds" fetchpriority="high"></figure>
+</div></section>
+
+<section class="band" id="services"><div class="wrap svc">
+  <div class="intro">
+    <h2>Everything for the garden, from one team</h2>
+    <p>Careful planning makes a garden a useful part of the home, and it can add value to your property. Tell us how you want to use the space and we'll design and build it.</p>
+  </div>
+  <ul class="key">
+    <li><div><h3>Patios</h3><p>New patios laid to suit the way you use your garden.</p></div></li>
+    <li><div><h3>Decking</h3><p>Timber decking for dining, seating and level changes.</p></div></li>
+    <li><div><h3>Water features</h3><p>Ponds and water features that bring movement and sound to a garden.</p></div></li>
+    <li><div><h3>Garden buildings</h3><p>Garden rooms and outbuildings for working, storing or relaxing.</p></div></li>
+    <li><div><h3>Themed outdoor spaces</h3><p>A complete garden built around one idea, designed with you.</p></div></li>
+    <li><div><h3>Garden maintenance</h3><p>Ongoing care to keep the garden looking the way it did on day one.</p></div></li>
+  </ul>
+</div></section>
+
+<section class="band work" id="work"><div class="wrap">
+  <h2>Recent gardens</h2>
+  <div class="gal">
+    <figure class="g1"><img src="img/brick-seat.jpg" width="561" height="750" loading="lazy" alt="Curved reclaimed-brick seating wall around a circular patio, reached by a curving block-paved path"><figcaption>Curved brick seating area with a block-paved path</figcaption></figure>
+    <figure><img src="img/patio.jpg" width="480" height="640" loading="lazy" alt="Indian sandstone patio laid behind a rear extension with slate chipping borders"><figcaption>Sandstone patio beside a rear extension</figcaption></figure>
+    <figure><img src="img/deck.jpg" width="480" height="640" loading="lazy" alt="Timber deck with rope handrail above a stone water feature and pebble bed"><figcaption>Deck with rope rail over a stone water feature</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band scale"><div class="wrap">
+  <p class="quote">From a complete makeover to simple maintenance, we're a one-stop shop for your garden.<cite>Large or small projects across Swindon and Wiltshire</cite></p>
+  <div class="facts">
+    <div class="fact"><i class="dot"></i><div><b>Buy With Confidence member</b><span>Listed on Swindon Trading Standards' approved trader scheme.</span></div></div>
+    <div class="fact"><i class="dot"></i><div><b>Local office in Swindon</b><span>Clearwater Business Park, Blagrove. A registered limited company.</span></div></div>
+    <div class="fact"><i class="dot"></i><div><b>Free quotes</b><span>Tell us about your garden and we'll come back with a price.</span></div></div>
+    <div class="fact"><i class="dot"></i><div><b>Six days a week</b><span>Open Monday to Saturday, 9am to 6pm.</span></div></div>
+  </div>
+</div></section>
+
+<section class="band area"><div class="wrap">
+  <div>
+    <h2>Working across Swindon and nearby</h2>
+    <p>We're based at Clearwater Business Park in Swindon and cover the town, Royal Wootton Bassett and the surrounding areas.</p>
+    <div class="pins"><span>Swindon</span><span>Royal Wootton Bassett</span><span>Surrounding villages</span></div>
+  </div>
+  <figure class="map"><img src="img/pond.jpg" width="640" height="480" loading="lazy" alt="Raised koi pond with a timber surround and water blade, beside a new sandstone patio and lawn"></figure>
+</div></section>
+
+<section class="band contact" id="quote"><div class="wrap">
+  <div>
+    <h2>Get a free quote</h2>
+    <p style="color:#d8e8db;margin-top:14px">Call, email, or send a few details about your garden and we'll get back to you.</p>
+    <dl>
+      <dt>Office</dt><dd><a href="tel:01793323288">01793 323 288</a></dd>
+      <dt>Mobile</dt><dd><a href="tel:07739650402">07739 650 402</a></dd>
+      <dt>Email</dt><dd><a href="mailto:info@buildallgardens.co.uk">info@buildallgardens.co.uk</a></dd>
+      <dt>Hours</dt><dd>Monday to Saturday, 9am to 6pm</dd>
+      <dt>Address</dt><dd>11 Anchor Business Centre, Clearwater Business Park, Frankland Road, Blagrove, Swindon SN5 8YZ</dd>
+    </dl>
+  </div>
+  <form id="qf" novalidate>
+    <h3>Tell us about your garden</h3>
+    <div class="row2">
+      <label>Your name<input id="qn" name="name" autocomplete="name" required></label>
+      <label>Phone<input id="qp" name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <label>What would you like?
+      <select id="qs" name="service"><option>Patio</option><option>Decking</option><option>Water feature</option><option>Garden building</option><option>Full garden design and build</option><option>Garden maintenance</option><option>Something else</option></select>
+    </label>
+    <label>A few details<textarea id="qd" name="details" placeholder="Rough size of the garden, what you'd like, and your town"></textarea></label>
+    <button class="btn" type="submit">Email my enquiry</button>
+    <div class="out" id="qo" role="status"></div>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Buildall Ltd, trading as Buildall Gardens. Registered in England &amp; Wales, company no. 09014819.</span>
+  <span>Swindon · Royal Wootton Bassett</span>
+</div></footer>
+<div class="preview">Concept preview prepared for Buildall Gardens by <a href="https://trevelyn.co.uk" style="color:inherit">Trevelyn</a>. Not the official website.</div>
+
+<script>
+{
+  const f=document.getElementById('qf'),o=document.getElementById('qo');
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    const body=`Name: ${v('qn')}\nPhone: ${v('qp')}\nService: ${v('qs')}\n\n${v('qd')}`;
+    const href='mailto:info@buildallgardens.co.uk?subject='+encodeURIComponent('Quote request: '+v('qs'))+'&body='+encodeURIComponent(body);
+    o.textContent='';
+    const p=document.createElement('p');p.textContent='Your email app should open with this enquiry filled in. If it doesn\'t, email info@buildallgardens.co.uk or call 01793 323 288.';
+    const a=document.createElement('a');a.href=href;a.textContent='Open the email again';a.style.fontWeight='600';
+    o.append(p,a);o.classList.add('on');
+    location.href=href;
+  });
+}
+</script>
+</body>
+</html>
