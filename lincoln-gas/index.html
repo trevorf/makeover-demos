@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!-- Photo sources (all from Lincoln Gas Ltd's own website, www.lincolngas.co.uk):
+  img/logo.png               https://www.lincolngas.co.uk/wp-content/uploads/2019/06/Lincoln-Gas-heating-plumbing-swindon.png
+  img/boilers-pipework.jpg   https://www.lincolngas.co.uk/wp-content/uploads/2019/06/new-bathroom-plumbing-boiler-mm9a.jpg (Marston Meysey job page, cropped)
+  img/before-cylinder.jpg    https://www.lincolngas.co.uk/wp-content/uploads/2019/11/old-boiler-replaced-with-worcester-bosch-boiler.jpg (left panel)
+  img/after-worcester-combi.jpg https://www.lincolngas.co.uk/wp-content/uploads/2019/11/old-boiler-replaced-with-worcester-bosch-boiler.jpg (right panel)
+  img/roll-top-bath.jpg      https://www.lincolngas.co.uk/wp-content/uploads/2019/06/roll-top-bath-installed.jpg
+  img/walkin-shower-slate.jpg https://www.lincolngas.co.uk/wp-content/uploads/2019/06/walkin-shower-installation.jpg
+  img/freestanding-sink.jpg  https://www.lincolngas.co.uk/wp-content/uploads/2019/06/free-standing-sink-with-drawers-installed.jpg
+  img/glass-shower.jpg       https://www.lincolngas.co.uk/wp-content/uploads/2019/06/contemporary-glass-shower.jpg
+  img/pub-washroom.jpg       https://www.lincolngas.co.uk/wp-content/uploads/2019/06/pub-toilets-plumber.jpg
+  img/column-radiator.jpg    https://www.lincolngas.co.uk/wp-content/uploads/2019/08/new-bathroom-plumbing-mm2.jpg
+  img/underfloor-calne.jpg   https://www.lincolngas.co.uk/wp-content/uploads/2019/08/underfloor-heating-UFH-Calne-5.jpg
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Lincoln Gas – website concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: straight-talking local heating engineers; safe, tidy, reliable.
+   IDEA: show the craft behind the boiler cupboard door: copper, flame, finished bathrooms.
+   PICTURE: their own copper pipework and twin-boiler install in the hero; before/after boiler swap; bathroom gallery.
+   COLOUR and TYPE: deep night-navy field, gas-flame blue from the logo, copper accent from the pipework; Archivo + Source Sans 3.
+   LAYOUT: sticky call bar, navy hero, accreditation strip, service cards, boiler-swap feature, gallery, customer words, area, contact, preview banner. */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0b1622);--ink:light-dark(#0f1d2b,#e6edf4);--soft:light-dark(#4a5a6b,#a6b4c2);
+--navy:#0c2238;--navy2:#13324f;--flame:#1583d1;--flame-soft:light-dark(#e7f2fb,#10273d);
+--copper:#d9773a;--copper-ink:#2a1405;--mist:light-dark(#f3f6f9,#102031);--line:light-dark(#dfe6ed,#1f3448);--card:light-dark(#ffffff,#0f1f30)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Sans 3",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Archivo,"Source Sans 3",sans-serif;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(34px,5.2vw,56px);font-weight:800}
+h2{font-size:clamp(28px,3.6vw,42px);font-weight:800}
+h3{font-size:20px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(44px,6vw,92px) max(5vw,18px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:700 13px/1.2 Archivo,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--flame)}
+.eyebrow::before{content:"";width:22px;height:3px;border-radius:2px;background:var(--copper)}
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:#fff;color:var(--navy);padding:8px max(5vw,18px);box-shadow:0 1px 0 rgba(0,0,0,.08),0 6px 18px rgba(12,34,56,.06)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:block;line-height:0;border-radius:6px}
+.brand img{height:76px;width:auto;display:block}
+.top .right{display:flex;align-items:center;gap:18px}
+.top .hrs{font-size:15px;color:#4a5a6b;line-height:1.3;text-align:right}
+.top .hrs b{display:block;color:#0f1d2b}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 24px;border-radius:12px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:17px;cursor:pointer;font-family:inherit;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--copper);outline-offset:3px}
+.call{background:var(--copper);color:var(--copper-ink);box-shadow:0 6px 18px rgba(217,119,58,.35)}
+.ghost{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.top .call{min-height:46px;padding:8px 18px;font-size:16px;box-shadow:none}
+.top .num{white-space:nowrap}
+/* hero */
+.hero{background:radial-gradient(120% 90% at 85% 10%,var(--navy2) 0%,var(--navy) 60%);color:#fff;padding-bottom:0;position:relative}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end}
+.hero .copy{padding-bottom:clamp(40px,6vw,88px)}
+.hero .eyebrow{color:#8cc6f0}
+.hero h1{margin-top:16px}
+.hero h1 em{font-style:normal;color:#8cc6f0}
+.hero p.lead{font-size:19px;color:#cfdbe7;margin:20px 0 30px;max-width:34em}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px}
+.hero .acts .call{font-size:19px;min-height:58px;padding:14px 28px}
+.hero .acts .ghost{min-height:58px}
+.hero small{display:block;margin-top:20px;color:#a9bccf;font-size:15px}
+.scene{margin:0;position:relative;aspect-ratio:4/5;width:100%;border-radius:22px 22px 0 0;overflow:hidden;background:var(--navy2)}
+.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 40%;display:block}
+.scene figcaption{position:absolute;left:14px;bottom:14px;right:14px;background:rgba(12,34,56,.86);backdrop-filter:blur(4px);color:#fff;font-size:14px;padding:10px 14px;border-radius:12px;line-height:1.35}
+.scene figcaption b{color:#f3b48a;font-weight:700}
+/* accreditations */
+.creds{background:var(--mist);padding:22px max(5vw,18px);border-bottom:1px solid var(--line)}
+.creds ul{list-style:none;margin:0 auto;padding:0;max-width:1180px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+.creds li{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px}
+.creds li small{display:block;font-weight:500;color:var(--soft);font-size:14px;line-height:1.2}
+.creds svg{width:30px;height:30px;flex:none;color:var(--flame)}
+/* services */
+.svc-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,64px);align-items:end}
+.svc-head p{color:var(--soft)}
+.cards{margin-top:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 24px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;left:0;top:0;height:4px;width:56px;background:var(--copper);border-radius:0 0 4px 0}
+.card .ic{width:48px;height:48px;border-radius:12px;background:var(--flame-soft);color:var(--flame);display:grid;place-items:center}
+.card .ic svg{width:26px;height:26px}
+.card p{color:var(--soft)}
+.card ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:4px;font-size:16px}
+.card li{padding-left:20px;position:relative}
+.card li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:50%;background:var(--copper)}
+/* boiler swap */
+.swap{background:var(--navy);color:#fff}
+.swap .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,5vw,72px);align-items:center}
+.swap .eyebrow{color:#8cc6f0}
+.swap h2{margin-top:14px}
+.swap p{color:#cfdbe7;margin-top:16px}
+.steps{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.steps li{display:flex;gap:14px;align-items:flex-start;color:#e3ebf3}
+.steps i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--copper);color:var(--copper-ink);font:800 14px/28px Archivo,sans-serif;text-align:center;font-style:normal}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pair figure{margin:0;position:relative;aspect-ratio:9/16;border-radius:18px;overflow:hidden;background:var(--navy2)}
+.pair img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pair figcaption{position:absolute;top:12px;left:12px;background:#fff;color:var(--navy);font:800 13px/1 Archivo,sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:8px 12px;border-radius:999px}
+.pair figure:last-child figcaption{background:var(--copper);color:var(--copper-ink)}
+.guar{margin-top:26px;display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 18px}
+.guar b{font:800 30px/1 Archivo,sans-serif;color:#f3b48a;flex:none}
+.guar span{font-size:16px;color:#cfdbe7}
+/* gallery */
+.gal{margin-top:30px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:260px;gap:14px}
+.gal figure{margin:0;position:relative;border-radius:16px;overflow:hidden;background:var(--mist)}
+.gal .tall{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.gal figure:hover img{transform:scale(1.03)}
+.gal figcaption{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(12,34,56,.86);color:#fff;font-size:14px;font-weight:600;padding:8px 12px;border-radius:10px;line-height:1.3}
+.work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px 24px}
+.work-head p{color:var(--soft);max-width:32em}
+/* reviews */
+.words{background:var(--mist)}
+.quotes{margin-top:30px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+blockquote{margin:0;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 26px 22px;display:flex;flex-direction:column;gap:14px}
+blockquote p{font-size:18px;line-height:1.55}
+blockquote p::before{content:"\201C";display:block;font:800 52px/0.6 Archivo,sans-serif;color:var(--copper);margin:10px 0 8px}
+blockquote footer{padding:0;margin-top:auto;font-size:15px;color:var(--soft)}
+blockquote footer b{color:var(--ink)}
+.words .more{margin-top:22px;color:var(--soft);font-size:16px}
+/* about */
+.about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px)}
+.about p{color:var(--soft);margin-top:16px}
+.facts{display:grid;gap:18px}
+.fact{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-top:1px solid var(--line)}
+.fact:last-child{border-bottom:1px solid var(--line)}
+.fact svg{flex:none;width:26px;height:26px;color:var(--flame);margin-top:2px}
+.fact b{display:block;font-size:18px}
+.fact span{color:var(--soft);font-size:16px}
+.team{margin-top:24px;display:flex;flex-wrap:wrap;gap:8px}
+.team span{padding:7px 14px;border-radius:999px;background:var(--mist);font-size:15px;border:1px solid var(--line)}
+.team span b{font-weight:700}
+/* area */
+.area{padding-top:0}
+.area .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;background:var(--flame-soft);border-radius:24px;padding:clamp(22px,4vw,48px)}
+.area p{color:var(--soft);margin-top:14px}
+.pins{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pins span{padding:8px 16px;border-radius:999px;background:var(--card);font-weight:600;font-size:16px;border:1px solid var(--line)}
+.pins span.home{background:var(--navy);color:#fff;border-color:var(--navy)}
+.map{margin:0;aspect-ratio:3/2;position:relative;border-radius:18px;overflow:hidden}
+.map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.map figcaption{position:absolute;left:10px;bottom:10px;background:rgba(12,34,56,.86);color:#fff;font-size:14px;font-weight:600;padding:8px 12px;border-radius:10px}
+/* contact */
+.contact{background:var(--navy);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px)}
+.contact .eyebrow{color:#8cc6f0}
+.contact h2{margin-top:14px}
+.contact dl{margin:26px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 18px}
+.contact dt{color:#a9bccf}
+.contact dd{margin:0;font-weight:600}
+.contact dd a{text-decoration-color:var(--copper);text-underline-offset:4px}
+.contact .bigcall{margin-top:28px}
+form{background:#fff;color:#0f1d2b;border-radius:20px;padding:clamp(20px,3vw,34px);display:grid;gap:14px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+form h3{color:var(--navy);font-size:24px}
+form .note{font-size:15px;color:#4a5a6b}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,textarea,select{font:16px/1.4 "Source Sans 3",sans-serif;padding:12px 14px;border:1.5px solid #c9d4de;border-radius:10px;background:#fff;color:#0f1d2b;min-height:48px;width:100%}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+form .btn{background:var(--navy);color:#fff;width:100%}
+.out{display:none;background:#eaf3fb;border-radius:10px;padding:14px;font-size:15px}
+.out.on{display:block}
+.out p{margin-bottom:6px}
+/* footer */
+.site-foot{padding:30px max(5vw,18px) 0;color:var(--soft);font-size:15px}
+.site-foot .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-bottom:26px}
+.preview{background:var(--copper);color:var(--copper-ink);text-align:center;padding:12px max(5vw,18px);font-size:15px;font-weight:600}
+@media(max-width:960px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:220px}.top .hrs{display:none}}
+@media(max-width:860px){
+.hero .wrap,.svc-head,.swap .wrap,.about .wrap,.area .wrap,.contact .wrap,.quotes{grid-template-columns:minmax(0,1fr)}
+.hero .copy{padding-bottom:8px}
+.scene{aspect-ratio:4/3}
+.creds ul{justify-content:flex-start}
+}
+@media(max-width:520px){
+.brand img{height:58px}.top .num{display:none}
+.cards{grid-template-columns:minmax(0,1fr)}
+.row2{grid-template-columns:minmax(0,1fr)}
+.hero .acts .btn{flex:1 1 100%}
+.gal{grid-auto-rows:190px;gap:10px}.gal figcaption{font-size:13px;padding:6px 9px;left:8px;right:8px;bottom:8px}
+.creds li{flex:1 1 100%}
+.pair figure{aspect-ratio:3/5}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 22c4 0 7-2.8 7-6.8 0-3.6-2.4-6-4.2-8.2-.5 2-1.6 3.3-3 3.8.4-3.4-1-6.4-3.8-8.8.3 3.3-1.6 5.6-3 7.6A9 9 0 0 0 5 15.2C5 19.2 8 22 12 22z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l8 3v6c0 4.6-3.4 8.3-8 9-4.6-.7-8-4.4-8-9V6z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M8.5 12l2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-3-3 1.7-1.7-6-6L4 12 3 11l3.6-3.6a5 5 0 0 1 8.1-1.1z"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></symbol>
+  <symbol id="i-shower" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 21V7a4 4 0 0 1 4-4h1a4 4 0 0 1 4 4v1M9 8h8M11 12v1M14 12v1M17 12v1M11 16v1M14 16v1M17 16v1"/></symbol>
+  <symbol id="i-hob" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.5" cy="10" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="15.5" cy="10" r="2.2" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 16h10"/></symbol>
+  <symbol id="i-floor" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h14a2 2 0 0 1 0 4H6a2 2 0 0 0 0 4h12a2 2 0 0 1 0 4H4"/></symbol>
+  <symbol id="i-phone2" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10.5 18h3"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9.5 9.5a3.5 3.5 0 0 1 5 0M11 11.5a1.4 1.4 0 0 1 2 0"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M8.5 14l-1.5 7 5-2.5 5 2.5-1.5-7"/></symbol>
+  <symbol id="i-team" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4.8a3.2 3.2 0 0 1 0 6.4M18 14.3c1.8.8 3 2.6 3 4.7"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 19c0-8 5-13 15-14-1 10-6 15-14 15zM5 19l7-7"/></symbol>
+</svg>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top"><img src="img/logo.png" width="169" height="76" alt="Lincoln Gas Ltd – Heating &amp; Plumbing Services"></a>
+  <div class="right">
+    <p class="hrs"><b>Gas Safe registered</b>Mon–Fri, 8am–5pm</p>
+    <a class="btn call" href="tel:01793987137" aria-label="Call 01793 987 137"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>Call<span class="num"> 01793 987 137</span></span></a>
+  </div>
+</div></header>
+
+<section class="band hero" id="top"><div class="wrap">
+  <div class="copy">
+    <span class="eyebrow">Plumbing &amp; heating engineers</span>
+    <h1>Boilers, heating and plumbing in <em>Swindon</em> and across Wiltshire</h1>
+    <p class="lead">Lincoln Gas Ltd is a local heating and plumbing company working for homes and businesses throughout Swindon and the South West. New boilers, repairs and servicing, bathrooms, underfloor heating and smart controls, all from one Gas Safe registered team.</p>
+    <div class="acts">
+      <a class="btn call" href="tel:01793987137"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 01793 987 137</a>
+      <a class="btn ghost" href="#quote">Get a free quote</a>
+    </div>
+    <small>Monday to Friday, 8am to 5pm · Unit 5, Oaklands Industrial Estate, Braydon</small>
+  </div>
+  <figure class="scene"><img src="img/boilers-pipework.jpg" width="740" height="1200" alt="Two new wall-hung boilers being fitted with runs of new copper pipework, pumps and isolation valves on a plant-room wall" fetchpriority="high"><figcaption><b>Recent job:</b> new boilers and copper pipework for a property extension in Marston Meysey</figcaption></figure>
+</div></section>
+
+<section class="creds" aria-label="Registrations and accreditations">
+  <ul>
+    <li><svg aria-hidden="true"><use href="#i-flame"/></svg><span>Gas Safe registered<small>Gas, LPG &amp; OFTEC engineers</small></span></li>
+    <li><svg aria-hidden="true"><use href="#i-badge"/></svg><span>Worcester Accredited Installer<small>Extended guarantees up to 10 years</small></span></li>
+    <li><svg aria-hidden="true"><use href="#i-shield"/></svg><span>CHAS accredited contractor<small>Contractors' health &amp; safety scheme</small></span></li>
+    <li><svg aria-hidden="true"><use href="#i-drop"/></svg><span>WaterSafe approved<small>Approved plumbers</small></span></li>
+  </ul>
+</section>
+
+<section class="band" id="services"><div class="wrap">
+  <div class="svc-head">
+    <div><span class="eyebrow">What we do</span><h2 style="margin-top:14px">Commercial and domestic plumbing and heating</h2></div>
+    <p>From replacing a tap washer to designing a complete heating system, we treat every job, however small, as if it were in our own home. We stick to our quotes and take the old kit away when we're done.</p>
+  </div>
+  <div class="cards">
+    <article class="card"><div class="ic"><svg aria-hidden="true"><use href="#i-flame"/></svg></div><h3>Boilers, heating &amp; radiators</h3><p>Boiler installation specialists, from straight swaps to full system design.</p>
+      <ul><li>New boilers and replacements</li><li>Regular or system to combi conversions</li><li>Radiator replacement, flushing and repairs</li></ul></article>
+    <article class="card"><div class="ic"><svg aria-hidden="true"><use href="#i-wrench"/></svg></div><h3>Repairs, servicing &amp; maintenance</h3><p>Fault finding and repair on domestic gas, LPG and oil boilers. If yours is beyond economical repair, you'll get impartial advice and a free, no-obligation quote.</p>
+      <ul><li>Boiler servicing</li><li>Landlord gas safety certificates</li><li>Planned and reactive maintenance</li></ul></article>
+    <article class="card"><div class="ic"><svg aria-hidden="true"><use href="#i-shower"/></svg></div><h3>Plumbing, bathrooms &amp; showers</h3><p>Everything from a dripping tap to a complete, high-end bathroom.</p>
+      <ul><li>Full bathroom refurbishments</li><li>Walk-in showers and wet rooms</li><li>Cloakrooms and water softeners</li></ul></article>
+    <article class="card"><div class="ic"><svg aria-hidden="true"><use href="#i-hob"/></svg></div><h3>Kitchens &amp; gas appliances</h3><p>Gas cookers, ovens and hobs fitted and certified to current regulations, with pressure and tightness tests every time.</p>
+      <ul><li>Cooker, oven and hob installs</li><li>Commercial catering</li><li>Sinks, taps and appliances</li></ul></article>
+    <article class="card"><div class="ic"><svg aria-hidden="true"><use href="#i-floor"/></svg></div><h3>Underfloor heating</h3><p>Wet underfloor heating designed, installed and commissioned, in new builds or as part of a renovation.</p>
+      <ul><li>Room-by-room temperature control</li><li>Even, radiant heat</li><li>Low maintenance</li></ul></article>
+    <article class="card"><div class="ic"><svg aria-hidden="true"><use href="#i-phone2"/></svg></div><h3>Smart heating controls</h3><p>Hive, Honeywell and Nest controls fitted with a new boiler or added to your existing system.</p>
+      <ul><li>Control heating from your phone</li><li>Works with smart speakers</li><li>Better energy efficiency</li></ul></article>
+  </div>
+</div></section>
+
+<section class="band swap" id="boilers"><div class="wrap">
+  <div>
+    <span class="eyebrow">Heating system conversion</span>
+    <h2>Old back boiler out. New Worcester Bosch combi in.</h2>
+    <p>A recent job from start to finish: an open-vented system with a back boiler and gas fire, replaced with a sealed Worcester Bosch combination boiler that now lives in the airing cupboard.</p>
+    <ol class="steps">
+      <li><i>1</i><span>Gas fire, back boiler and hot water cylinder removed</span></li>
+      <li><i>2</i><span>Pipework converted from one-pipe to a more efficient two-pipe system</span></li>
+      <li><i>3</i><span>Radiators replaced, with new thermostatic valves on each</span></li>
+      <li><i>4</i><span>New 28mm copper gas supply run from the meter and tested</span></li>
+    </ol>
+    <div class="guar"><b>10 yrs</b><span>As Worcester Accredited Installers we can offer extended guarantees of up to 10 years on Worcester boilers.</span></div>
+  </div>
+  <div class="pair">
+    <figure><img src="img/before-cylinder.jpg" width="404" height="730" loading="lazy" alt="Airing cupboard before the work, with an old lagged hot water cylinder and pipework"><figcaption>Before</figcaption></figure>
+    <figure><img src="img/after-worcester-combi.jpg" width="390" height="730" loading="lazy" alt="The same cupboard after the work, with a new white Worcester Bosch combi boiler, neat copper pipework and a magnetic system filter"><figcaption>After</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band" id="work"><div class="wrap">
+  <div class="work-head">
+    <div><span class="eyebrow">Our work</span><h2 style="margin-top:14px">Recent bathrooms and installations</h2></div>
+    <p>A few jobs for domestic and commercial customers in and around Swindon.</p>
+  </div>
+  <div class="gal">
+    <figure class="tall"><img src="img/roll-top-bath.jpg" width="800" height="1067" loading="lazy" alt="Freestanding roll-top bath with chrome mixer tap in a marble-effect tiled bathroom"><figcaption>Roll-top bath installation</figcaption></figure>
+    <figure class="tall"><img src="img/walkin-shower-slate.jpg" width="800" height="1066" loading="lazy" alt="Walk-in shower with a frameless glass panel and natural stone-effect wall tiles"><figcaption>Walk-in shower with stone-effect tiling</figcaption></figure>
+    <figure><img src="img/freestanding-sink.jpg" width="800" height="1067" loading="lazy" alt="White basin on a dark freestanding vanity unit with drawers against a stone-tiled wall"><figcaption>Basin on a freestanding vanity unit</figcaption></figure>
+    <figure><img src="img/glass-shower.jpg" width="723" height="964" loading="lazy" alt="Chrome-framed glass shower enclosure with a thermostatic shower in a panelled bathroom"><figcaption>Glass shower enclosure, Marston Meysey</figcaption></figure>
+    <figure><img src="img/pub-washroom.jpg" width="800" height="1067" loading="lazy" alt="Pub washroom with two traditional basins on chrome stands, metro tiles and patterned wallpaper"><figcaption>Washroom refit at The Black Horse</figcaption></figure>
+    <figure><img src="img/column-radiator.jpg" width="800" height="800" loading="lazy" alt="Traditional cast-style column radiator fitted beneath a window in a grey panelled room"><figcaption>Column radiator, Marston Meysey</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band words" id="reviews"><div class="wrap">
+  <span class="eyebrow">In our customers' words</span>
+  <h2 style="margin-top:14px">"We would thoroughly recommend Lincoln Gas"</h2>
+  <div class="quotes">
+    <blockquote><p>There was 3 days of absolute professionalism. Dealing with Adam who runs the business was very efficient in dealing with all aspects, even though the company was very busy!</p><footer><b>Mr Gleed</b> · bathroom refit, November 2020</footer></blockquote>
+    <blockquote><p>We are absolutely delighted with the work. … Your guy is lovely, worked hard and wouldn't give up, and that on a job no one else wanted to do at all. Thank you!</p><footer><b>Mr Rota</b> · October 2021</footer></blockquote>
+    <blockquote><p>Thank you for installing the new boiler so quickly – a good professional job.</p><footer><b>Mr Simpkins</b> · new boiler, November 2020</footer></blockquote>
+    <blockquote><p>Am delighted with the heating which works very efficiently, so your idea of cleaning out the radiators was right, many thanks.</p><footer><b>Mrs Dawson</b> · June 2021</footer></blockquote>
+  </div>
+  <p class="more">Dozens more customer messages are published on the Lincoln Gas website.</p>
+</div></section>
+
+<section class="band about" id="about"><div class="wrap">
+  <div>
+    <span class="eyebrow">Why Lincoln Gas</span>
+    <h2 style="margin-top:14px">A local team you'll see again</h2>
+    <p>We're a Swindon-based gas and plumbing business supporting households and commercial developments across Wiltshire. Our team are all qualified, experienced plumbers and heating engineers, and much of our work comes from repeat customers and recommendations.</p>
+    <div class="team" aria-label="The team">
+      <span><b>Adam Lincoln</b> · Director</span><span><b>Tracey Titley</b> · Office Manager</span><span><b>Niall</b>, <b>Jimmy</b> &amp; <b>Sam</b> · Boiler Technicians</span><span><b>Lewis</b> · Gas Engineer</span><span><b>Ricky</b> · Plumbing &amp; Heating Engineer</span><span><b>Kian</b> · Apprentice</span>
+    </div>
+  </div>
+  <div class="facts">
+    <div class="fact"><svg aria-hidden="true"><use href="#i-team"/></svg><div><b>British Gas trained</b><span>Over 25 years' combined experience at British Gas.</span></div></div>
+    <div class="fact"><svg aria-hidden="true"><use href="#i-shield"/></svg><div><b>Registered and accredited</b><span>Gas Safe, OFTEC and LPG registered engineers; Worcester Accredited Installer; CHAS and WaterSafe.</span></div></div>
+    <div class="fact"><svg aria-hidden="true"><use href="#i-wrench"/></svg><div><b>Most faults fixed within the hour</b><span>And if parts are needed, we can quote on the spot.</span></div></div>
+    <div class="fact"><svg aria-hidden="true"><use href="#i-leaf"/></svg><div><b>Tidy, efficient, economical</b><span>Old kit removed and recycled where possible, and the most efficient option recommended.</span></div></div>
+  </div>
+</div></section>
+
+<section class="band area" id="area"><div class="wrap">
+  <div>
+    <span class="eyebrow">Where we work</span>
+    <h2 style="margin-top:14px">Swindon, Wiltshire and the South West</h2>
+    <p>Our base is at Oaklands Industrial Estate in Braydon, just outside Swindon. We work for homes and businesses across the town and the surrounding county, like this underfloor heating job in Calne.</p>
+    <div class="pins"><span class="home">Braydon</span><span>Swindon</span><span>Calne</span><span>Marston Meysey</span><span>Across Wiltshire</span></div>
+  </div>
+  <figure class="map"><img src="img/underfloor-calne.jpg" width="800" height="533" loading="lazy" alt="Underfloor heating pipe laid in neat loops over insulation, ready for screed"><figcaption>Underfloor heating, Calne</figcaption></figure>
+</div></section>
+
+<section class="band contact" id="quote"><div class="wrap">
+  <div>
+    <span class="eyebrow">Free, no-obligation quote</span>
+    <h2>Tell us what you need</h2>
+    <p style="color:#cfdbe7;margin-top:14px">Call the office, email, or send a few details and we'll get back to you.</p>
+    <dl>
+      <dt>Phone</dt><dd><a href="tel:01793987137">01793 987 137</a></dd>
+      <dt>Email</dt><dd><a href="mailto:enquiries@lincolngas.co.uk">enquiries@lincolngas.co.uk</a></dd>
+      <dt>Hours</dt><dd>Monday to Friday, 8am to 5pm</dd>
+      <dt>Address</dt><dd>Lincoln Gas Ltd, Unit 5 Oaklands Industrial Estate, Braydon, Swindon SN5 0AN</dd>
+    </dl>
+    <a class="btn call bigcall" href="tel:01793987137"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 01793 987 137</a>
+  </div>
+  <form id="qf" novalidate>
+    <h3>Request a free quote</h3>
+    <div class="row2">
+      <label>Your name<input id="qn" name="name" autocomplete="name" required></label>
+      <label>Phone<input id="qp" name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <div class="row2">
+      <label>Postcode<input id="qc" name="postcode" autocomplete="postal-code"></label>
+      <label>What do you need?
+        <select id="qs" name="service"><option>New boiler or heating system</option><option>Boiler repair or service</option><option>Landlord gas safety certificate</option><option>Bathroom or shower</option><option>General plumbing</option><option>Kitchen or gas appliance</option><option>Underfloor heating</option><option>Smart heating controls</option><option>Something else</option></select>
+      </label>
+    </div>
+    <label>A few details<textarea id="qd" name="details" placeholder="What's the problem or the job? For a boiler, the make and age helps."></textarea></label>
+    <button class="btn" type="submit">Email my enquiry</button>
+    <p class="note">This opens your own email app with your enquiry filled in, addressed to enquiries@lincolngas.co.uk. Your details are only used to reply to you.</p>
+    <div class="out" id="qo" role="status"></div>
+  </form>
+</div></section>
+
+<footer class="site-foot"><div class="wrap">
+  <span>Lincoln Gas Ltd. Registered in England &amp; Wales, company no. 08995042. Unit 5 Oaklands Industrial Estate, Braydon, Swindon SN5 0AN.</span>
+  <span>Commercial &amp; domestic · Swindon · Wiltshire</span>
+</div></footer>
+<div class="preview">Concept preview prepared for Lincoln Gas Ltd by <a href="https://trevelyn.co.uk">Trevelyn</a>. Not the official website.</div>
+
+<script>
+{
+  const f=document.getElementById('qf'),o=document.getElementById('qo');
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    const body=`Name: ${v('qn')}\nPhone: ${v('qp')}\nPostcode: ${v('qc')}\nService: ${v('qs')}\n\n${v('qd')}`;
+    const href='mailto:enquiries@lincolngas.co.uk?subject='+encodeURIComponent('Quote request: '+v('qs'))+'&body='+encodeURIComponent(body);
+    o.textContent='';
+    const p=document.createElement('p');p.textContent='Your email app should open with this enquiry filled in. Nothing has been sent yet: press send in your email app. If it doesn\'t open, email enquiries@lincolngas.co.uk or call 01793 987 137.';
+    const a=document.createElement('a');a.href=href;a.textContent='Open the email again';a.style.fontWeight='700';
+    o.append(p,a);o.classList.add('on');
+    location.href=href;
+  });
+}
+</script>
+</body>
+</html>

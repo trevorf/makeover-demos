@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- Photo sources (all from C.G. Electrical Services' own site, cg-electricalservices.co.uk/cg-projects/):
+  img/consumer-unit.jpg  https://cg-electricalservices.co.uk/wp-content/uploads/2026/03/WhatsApp-Image-2026-01-14-at-15.34.0297.jpg
+  img/rewire-wall.jpg    https://cg-electricalservices.co.uk/wp-content/uploads/2026/03/WhatsApp-Image-2026-01-08-at-11.14.45.jpg
+  img/barn-van.jpg       https://cg-electricalservices.co.uk/wp-content/uploads/2026/03/WhatsApp-Image-2025-12-31-at-18.56.20.jpg
+  img/beams.jpg          https://cg-electricalservices.co.uk/wp-content/uploads/2026/03/WhatsApp-Image-2026-01-19-at-13.39.37.jpg
+  img/pendants.jpg       https://cg-electricalservices.co.uk/wp-content/uploads/2026/03/WhatsApp-Image-2026-01-28-at-15.37.519.jpg
+  img/board.jpg          https://cg-electricalservices.co.uk/wp-content/uploads/2026/03/WhatsApp-Image-2025-12-11-at-15.17.15.jpg
+  img/logo.png           PNG extracted from https://cg-electricalservices.co.uk/wp-content/uploads/2026/01/logo-scaled-e1769006948168.svg
+  Reviews quoted from the Google reviews widget on their site (Nov 2026). -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>C.G. Electrical Services – website concept</title>
+<meta name="description" content="NICEIC registered electricians in Chippenham, serving homes and businesses across Wiltshire.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: a proper local firm; tidy, qualified, easy to reach.
+   IDEA: make calling or asking for a quote the obvious next step everywhere.
+   PICTURE: their own electrician at a consumer unit in the hero, real jobs below.
+   COLOUR and TYPE: the logo's slate and blue, with a hi-vis yellow for every call to action; Barlow Condensed + Barlow.
+   LAYOUT: sticky call bar, slate hero, service cards that lead to the quote form, proof, work, area, contact. */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0e1719);--ink:light-dark(#14262b,#e6eef0);--soft:light-dark(#4a5d62,#a6b7bb);
+--slate:#1f363c;--slate2:#2a464d;--blue:#0a59b5;--sky:#3b88db;--volt:#ffd23f;--volt-ink:#1a1a0a;
+--panel:light-dark(#f1f5f7,#16252a);--card:light-dark(#ffffff,#132126);--line:light-dark(#dde5e8,#26393f);
+--blue-tx:light-dark(#0a59b5,#7fb5f0)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Barlow,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Barlow Condensed",Barlow,sans-serif;line-height:1.02;text-wrap:balance;margin:0;letter-spacing:.005em}
+h1{font-size:clamp(40px,6vw,66px);font-weight:700}
+h2{font-size:clamp(32px,4.2vw,48px);font-weight:700}
+h3{font-size:24px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(44px,6.5vw,96px) max(5vw,16px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:600 14px/1 Barlow,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-tx);margin-bottom:14px}
+.eyebrow::before{content:"";width:18px;height:3px;background:var(--volt);border-radius:2px}
+.lede{color:var(--soft);margin-top:14px;max-width:40em}
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:#fff;color:var(--slate);padding:9px max(5vw,16px);box-shadow:0 1px 0 rgba(0,0,0,.08),0 6px 20px -12px rgba(0,0,0,.25)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:block;line-height:0;border-radius:6px;flex:0 1 auto}
+.brand img{height:76px;width:auto;max-width:100%;display:block}
+.top nav{display:flex;gap:26px;font-weight:600;font-size:16px;margin-left:auto;margin-right:8px}
+.top nav a{text-decoration:none;color:#2a464d}.top nav a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 24px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid transparent;font-size:17px;cursor:pointer;font-family:inherit;line-height:1.2}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.call{background:var(--volt);color:var(--volt-ink);box-shadow:0 2px 0 #c9a21c}
+.call:hover{background:#ffdc66}
+.ghost{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.top .call{min-height:46px;padding:8px 18px;font-size:17px;flex:none}
+.top .num{white-space:nowrap}
+/* hero */
+.hero{background:var(--slate);color:#fff;padding-bottom:0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 85% 10%,rgba(59,136,219,.28),transparent 60%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(24px,5vw,64px);align-items:end}
+.hero .copy{padding-bottom:clamp(40px,6vw,88px)}
+.hero .eyebrow{color:#9cc6f2}
+.hero p.lead{font-size:19px;color:#cfdde0;margin:20px 0 30px;max-width:33em}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px}
+.hero .call{font-size:19px;min-height:58px;padding:14px 28px}
+.trust{list-style:none;margin:30px 0 0;padding:22px 0 0;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:12px 26px;font-size:15px;color:#dbe6e8}
+.trust li{display:flex;align-items:center;gap:8px}
+.trust svg{width:20px;height:20px;flex:none;color:var(--volt)}
+.scene{margin:0;position:relative;aspect-ratio:4/5;width:100%;border-radius:20px 20px 0 0;overflow:hidden;background:var(--slate2)}
+.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+.scene figcaption{position:absolute;left:14px;bottom:14px;background:rgba(15,28,32,.82);color:#fff;font-size:14px;font-weight:500;padding:8px 12px;border-radius:8px;backdrop-filter:blur(4px)}
+/* services */
+.svc-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px 40px}
+.svc-head .lede{max-width:30em}
+.cards{margin-top:34px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 24px 22px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--sky);transform:translateY(-2px)}
+.ico{width:48px;height:48px;border-radius:12px;background:color-mix(in srgb,var(--blue) 12%,transparent);color:var(--blue-tx);display:grid;place-items:center;margin-bottom:4px}
+.ico svg{width:26px;height:26px}
+.card p{color:var(--soft);font-size:16px}
+.card a{margin-top:auto;padding-top:8px;font-weight:600;color:var(--blue-tx);text-decoration:none;display:inline-flex;align-items:center;gap:6px;min-height:44px}
+.card a:hover{text-decoration:underline;text-underline-offset:4px}
+/* why */
+.why{background:var(--panel)}
+.why .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.award{margin-top:28px;display:flex;gap:16px;align-items:center;background:var(--slate);color:#fff;border-radius:16px;padding:20px 22px}
+.award svg{width:44px;height:44px;flex:none;color:var(--volt)}
+.award b{display:block;font:700 22px/1.1 "Barlow Condensed",sans-serif}
+.award span{font-size:15px;color:#cfdde0}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 28px}
+.fact{display:flex;gap:14px;align-items:flex-start}
+.fact i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;margin-top:2px}
+.fact i svg{width:16px;height:16px}
+.fact b{display:block;font-size:18px}
+.fact span{color:var(--soft);font-size:16px}
+/* work */
+.gal{margin-top:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,290px));gap:14px}
+.gal figure{margin:0;position:relative;border-radius:14px;overflow:hidden;background:var(--panel)}
+.gal .tall{grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal figcaption{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(15,28,32,.84);color:#fff;font-size:14px;font-weight:500;padding:8px 12px;border-radius:8px}
+/* reviews */
+.reviews{background:var(--slate);color:#fff}
+.rhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px}
+.score{display:flex;align-items:center;gap:12px;font-size:16px;color:#cfdde0}
+.stars{display:flex;gap:2px;color:var(--volt)}.stars svg{width:22px;height:22px}
+.quotes{margin-top:30px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.quotes blockquote{margin:0;background:var(--slate2);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:16px}
+.quotes p{font-size:17px;color:#eef4f5}
+.quotes cite{margin-top:auto;font-style:normal;font-weight:600;color:#9cc6f2;font-size:15px}
+/* area */
+.area .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(28px,5vw,64px);align-items:center}
+.pins{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.pins span{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:var(--panel);border:1px solid var(--line);font-weight:600;font-size:16px}
+.pins span:first-child{background:var(--blue);border-color:var(--blue);color:#fff}
+.pins svg{width:14px;height:14px}
+.van{margin:0;aspect-ratio:4/5;position:relative;border-radius:18px;overflow:hidden;max-height:560px;width:100%}
+.van img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 55%}
+/* contact */
+.contact{background:var(--panel)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,64px)}
+.lines{margin-top:26px;display:grid;gap:12px}
+.line{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none}
+.line i{flex:none;width:42px;height:42px;border-radius:10px;background:var(--slate);color:var(--volt);display:grid;place-items:center}
+.line i svg{width:20px;height:20px}
+.line small{display:block;color:var(--soft);font-size:14px}
+.line b{font-size:18px;overflow-wrap:anywhere}
+a.line:hover{border-color:var(--sky)}
+form{background:#fff;color:#14262b;border-radius:18px;padding:clamp(20px,3vw,34px);display:grid;gap:14px;box-shadow:0 20px 40px -24px rgba(15,40,50,.35);border:1px solid #dde5e8}
+form h3{color:var(--slate);font-size:28px}
+label,.lbl{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,textarea,select{font:16px/1.4 Barlow,sans-serif;padding:12px 14px;border:1.5px solid #c9d4d8;border-radius:10px;background:#fff;color:#14262b;min-height:50px;width:100%}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.seg{display:flex;gap:8px}
+.seg label{flex:1;display:block;position:relative}
+.seg input{position:absolute;opacity:0;inset:0;min-height:0}
+.seg span{display:flex;align-items:center;justify-content:center;min-height:48px;border:1.5px solid #c9d4d8;border-radius:10px;font-weight:600;cursor:pointer}
+.seg input:checked+span{background:var(--slate);border-color:var(--slate);color:#fff}
+.seg input:focus-visible+span{outline:3px solid var(--sky);outline-offset:2px}
+form .btn{background:var(--blue);color:#fff;width:100%}
+form .btn:hover{background:#084c9b}
+.note{font-size:14px;color:#4a5d62}
+.out{display:none;background:#eef4f8;border-radius:10px;padding:14px;font-size:15px}
+.out.on{display:block}
+/* footer */
+footer{padding:30px max(5vw,16px) 0;color:var(--soft);font-size:15px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-bottom:26px}
+footer a{color:var(--ink)}
+.preview{background:var(--volt);color:var(--volt-ink);text-align:center;padding:12px max(5vw,16px);font-size:15px;font-weight:600}
+@media(max-width:980px){.top nav{display:none}.cards,.quotes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){
+.hero .wrap,.why .wrap,.area .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+.hero .copy{padding-bottom:10px}
+.scene{aspect-ratio:4/3.4}
+.gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:220px}
+.van{aspect-ratio:4/3}
+}
+@media(max-width:600px){
+.brand img{height:58px}
+.top .num{display:none}.top .call{padding:8px 14px}
+.cards,.quotes,.facts,.row2{grid-template-columns:minmax(0,1fr)}
+.hero .acts .btn{flex:1 1 100%}
+.gal figcaption{font-size:13px;padding:6px 9px;left:8px;right:8px;bottom:8px}
+}
+@media(max-width:370px){.brand img{height:48px}}
+@media(prefers-reduced-motion:reduce){.card{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6h18v12H3zM3 7l9 6 9-6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="m12 2.5 2.9 6 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.2 1.3-6.6-4.9-4.6 6.6-.8z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="m8.5 14 -1.5 8 5-3 5 3-1.5-8"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+</svg>
+
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top"><img src="img/logo.png" width="676" height="150" alt="C.G. Electrical Services"></a>
+  <nav aria-label="Main"><a href="#services">Services</a><a href="#work">Our work</a><a href="#area">Areas</a><a href="#quote">Contact</a></nav>
+  <a class="btn call" href="tel:01249477744" aria-label="Call 01249 477744"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call <span class="num">01249 477744</span></a>
+</div></header>
+
+<main>
+<section class="band hero" id="top"><div class="wrap">
+  <div class="copy">
+    <span class="eyebrow">NICEIC registered electricians</span>
+    <h1>Electricians in Chippenham and across Wiltshire</h1>
+    <p class="lead">Installations, full and partial rewires, EICRs, fault finding, smart systems and EV chargers for homes and businesses within about 40 minutes of Chippenham.</p>
+    <div class="acts">
+      <a class="btn call" href="tel:01249477744"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 01249 477744</a>
+      <a class="btn ghost" href="#quote">Get a free quote</a>
+    </div>
+    <ul class="trust">
+      <li><svg aria-hidden="true"><use href="#i-shield"/></svg>NICEIC registered</li>
+      <li><svg aria-hidden="true"><use href="#i-star"/></svg>Rated “Excellent” on Google, 83 reviews</li>
+      <li><svg aria-hidden="true"><use href="#i-award"/></svg>2026 UK Small Business Awards finalist</li>
+    </ul>
+  </div>
+  <figure class="scene"><img src="img/consumer-unit.jpg" width="1024" height="1365" alt="C.G. Electrical Services electrician in a hi-vis vest smiling while working on an open consumer unit" fetchpriority="high"><figcaption>Our team, on the job in Wiltshire</figcaption></figure>
+</div></section>
+
+<section class="band" id="services"><div class="wrap">
+  <div class="svc-head">
+    <div><span class="eyebrow">What we do</span><h2>Domestic and commercial electrical work</h2></div>
+    <p class="lede">Everything is installed to current UK regulations, with certification provided. Pick a service to start your quote.</p>
+  </div>
+  <div class="cards">
+    <article class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V16h5v-.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z"/></svg></div>
+      <h3>Electrical installations</h3>
+      <p>Lighting, sockets, consumer units and upgrades for new builds, renovations and extensions.</p>
+      <a href="#quote" data-svc="Electrical installation">Ask about an installation <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </article>
+    <article class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2-5 4 10 2-5h6"/></svg></div>
+      <h3>Electrical rewires</h3>
+      <p>Full and partial rewires that replace outdated wiring and bring sockets, lighting and consumer units up to date.</p>
+      <a href="#quote" data-svc="Full or partial rewire">Ask about a rewire <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </article>
+    <article class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 4H6a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-3M9 3h6v3H9zM8.5 13l2.5 2.5 4.5-5"/></svg></div>
+      <h3>Compliance and maintenance</h3>
+      <p>EICRs, landlord safety certificates, emergency lighting tests and ongoing maintenance.</p>
+      <a href="#quote" data-svc="EICR or landlord certificate">Ask about an EICR <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </article>
+    <article class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.7 6.3a4 4 0 0 0-5.4 5.2L3 17.8V21h3.2l6.3-6.3a4 4 0 0 0 5.2-5.4l-2.4 2.4-2.6-.6-.6-2.6 2.6-2.2Z"/></svg></div>
+      <h3>Fault finding and repairs</h3>
+      <p>We find the cause quickly, fix it properly and restore power safely, so the problem doesn’t come back.</p>
+      <a href="#quote" data-svc="Fault finding or repair">Report a fault <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </article>
+    <article class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19.5" r="1.3" fill="currentColor"/></svg></div>
+      <h3>Smart installations and networking</h3>
+      <p>Smart lighting, timers, networking and CCTV for better security, control and efficiency.</p>
+      <a href="#quote" data-svc="Smart installation, networking or CCTV">Ask about smart systems <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </article>
+    <article class="card">
+      <div class="ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div>
+      <h3>EV chargers and renewables</h3>
+      <p>EV charger installation with advice on the right unit, plus LED upgrades and smart controls that cut running costs.</p>
+      <a href="#quote" data-svc="EV charger or energy upgrade">Ask about EV charging <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </article>
+  </div>
+</div></section>
+
+<section class="band why"><div class="wrap">
+  <div>
+    <span class="eyebrow">Why C.G. Electrical</span>
+    <h2>A local team that turns up, does it right and leaves it tidy</h2>
+    <p class="lede">Led by managing director Carter, who still works on site, our team of electricians, trainees and office staff keeps every job straightforward, from the first call to the certificate.</p>
+    <div class="award"><svg aria-hidden="true"><use href="#i-award"/></svg><div><b>Finalist, 2026 Official UK Small Business Awards</b><span>C.G. Electrical Services was named a finalist this year.</span></div></div>
+  </div>
+  <div class="facts">
+    <div class="fact"><i><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>NICEIC registered</b><span>Fully qualified, insured and accredited electricians.</span></div></div>
+    <div class="fact"><i><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>25+ years’ combined experience</b><span>Across domestic and commercial projects.</span></div></div>
+    <div class="fact"><i><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>Certification provided</b><span>Work installed to current UK regulations.</span></div></div>
+    <div class="fact"><i><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>DBS checked</b><span>Peace of mind when we’re working in your home.</span></div></div>
+    <div class="fact"><i><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>Pay monthly available</b><span>Flexible pay monthly schemes on request.</span></div></div>
+    <div class="fact"><i><svg aria-hidden="true"><use href="#i-check"/></svg></i><div><b>Homes and businesses</b><span>From a new light fitting to a solar farm submain.</span></div></div>
+  </div>
+</div></section>
+
+<section class="band" id="work"><div class="wrap">
+  <span class="eyebrow">Recent work</span>
+  <h2>Real jobs, real photos</h2>
+  <div class="gal">
+    <figure class="tall"><img src="img/rewire-wall.jpg" width="1024" height="1365" loading="lazy" alt="Electrician working on wall wiring in a decorated period living room"><figcaption>Wiring work in a period home</figcaption></figure>
+    <figure class="tall"><img src="img/beams.jpg" width="1024" height="1365" loading="lazy" alt="Electrician on a ladder fitting lights to exposed oak beams in a vaulted ceiling"><figcaption>Lighting fitted to vaulted oak beams</figcaption></figure>
+    <figure><img src="img/pendants.jpg" width="1024" height="1273" loading="lazy" alt="Three clear glass pendant lights hanging over a dining table"><figcaption>Pendant lighting over a dining table</figcaption></figure>
+    <figure><img src="img/board.jpg" width="1024" height="768" loading="lazy" alt="New distribution board and isolators mounted on a timber-lined wall in a commercial building"><figcaption>New distribution board, commercial fit-out</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band reviews"><div class="wrap">
+  <div class="rhead">
+    <div><span class="eyebrow" style="color:#9cc6f2">Google reviews</span><h2>What customers say</h2></div>
+    <div class="score"><span class="stars" aria-hidden="true"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></span><span>Rated “Excellent”, based on 83 Google reviews</span></div>
+  </div>
+  <div class="quotes">
+    <blockquote><p>“They carried out a complete rewire for us as part of a full renovation and were fantastic from start to finish. Professional, reliable, tidy and great to work with.”</p><cite>Mitch, Google review</cite></blockquote>
+    <blockquote><p>“Thorough inspection for an EICR Certificate and then fitting a 32A cable and rotary isolator for a hot tub. Very pleased with the tradesmen and the tidy work.”</p><cite>Graham Macaulay, Google review</cite></blockquote>
+    <blockquote><p>“Friendly service, easy to get a quote and the work was completed to a great standard. The EV charger wiring after it was moved looks much tidier than the original fitters.”</p><cite>Peter Cliff, Google review</cite></blockquote>
+  </div>
+</div></section>
+
+<section class="band area" id="area"><div class="wrap">
+  <div>
+    <span class="eyebrow">Where we work</span>
+    <h2>Based in Chippenham, covering about 40 minutes around</h2>
+    <p class="lede">We work for homes and businesses across Wiltshire and into Bath. Not sure if you’re in range? Give us a call.</p>
+    <div class="pins">
+      <span><svg aria-hidden="true"><use href="#i-pin"/></svg>Chippenham</span><span>Corsham</span><span>Calne</span><span>Melksham</span><span>Trowbridge</span><span>Devizes</span><span>Malmesbury</span><span>Bradford-on-Avon</span><span>Bath</span>
+    </div>
+  </div>
+  <figure class="van"><img src="img/barn-van.jpg" width="900" height="1200" loading="lazy" alt="Electrician working on the outside of a stone building, with a blue C.G. Electrical Services van parked behind"></figure>
+</div></section>
+
+<section class="band contact" id="quote"><div class="wrap">
+  <div>
+    <span class="eyebrow">Free quotes</span>
+    <h2>Get a free quote</h2>
+    <p class="lede">Call, email, or send a few details about the job and we’ll get back to you.</p>
+    <div class="lines">
+      <a class="line" href="tel:01249477744"><i><svg aria-hidden="true"><use href="#i-phone"/></svg></i><span><small>Phone</small><b>01249 477744</b></span></a>
+      <a class="line" href="mailto:info@cg-electricalservices.co.uk"><i><svg aria-hidden="true"><use href="#i-mail"/></svg></i><span><small>Email</small><b>info@cg-electricalservices.co.uk</b></span></a>
+      <div class="line"><i><svg aria-hidden="true"><use href="#i-pin"/></svg></i><span><small>Address</small><b>20 Goodwood Way, Chippenham SN14 0SY</b></span></div>
+    </div>
+  </div>
+  <form id="qf" novalidate>
+    <h3>Tell us about the job</h3>
+    <div class="lbl" role="radiogroup" aria-label="Enquiry type">Enquiry type
+      <div class="seg">
+        <label><input type="radio" name="type" value="Domestic" checked><span>Domestic</span></label>
+        <label><input type="radio" name="type" value="Commercial"><span>Commercial</span></label>
+      </div>
+    </div>
+    <div class="row2">
+      <label>Your name<input id="qn" name="name" autocomplete="name" required></label>
+      <label>Phone<input id="qp" name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <div class="row2">
+      <label>What do you need?
+        <select id="qs" name="service"><option>Electrical installation</option><option>Full or partial rewire</option><option>EICR or landlord certificate</option><option>Fault finding or repair</option><option>Smart installation, networking or CCTV</option><option>EV charger or energy upgrade</option><option>Something else</option></select>
+      </label>
+      <label>Town or postcode<input id="qt" name="town" autocomplete="postal-code"></label>
+    </div>
+    <label>A few details<textarea id="qd" name="details" placeholder="What needs doing, the type of property, and any timescale"></textarea></label>
+    <button class="btn" type="submit"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email my enquiry</button>
+    <p class="note">This opens your email app with your enquiry filled in, addressed to info@cg-electricalservices.co.uk. Prefer to talk? Call 01249 477744.</p>
+    <div class="out" id="qo" role="status"></div>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>C.G. Electrical Services · 20 Goodwood Way, Chippenham SN14 0SY</span>
+  <span><a href="tel:01249477744">01249 477744</a> · <a href="mailto:info@cg-electricalservices.co.uk">info@cg-electricalservices.co.uk</a></span>
+</div></footer>
+<div class="preview">Concept preview prepared for C.G. Electrical Services by <a href="https://trevelyn.co.uk" style="color:inherit">Trevelyn</a>. Not the official website.</div>
+
+<script>
+{
+  const f=document.getElementById('qf'),o=document.getElementById('qo'),s=document.getElementById('qs');
+  document.querySelectorAll('[data-svc]').forEach(a=>a.addEventListener('click',()=>{s.value=a.dataset.svc;}));
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    const type=(f.querySelector('input[name=type]:checked')||{}).value||'';
+    const body=`Enquiry type: ${type}\nName: ${v('qn')}\nPhone: ${v('qp')}\nService: ${v('qs')}\nTown or postcode: ${v('qt')}\n\n${v('qd')}`;
+    const href='mailto:info@cg-electricalservices.co.uk?subject='+encodeURIComponent('Quote request: '+v('qs'))+'&body='+encodeURIComponent(body);
+    o.textContent='';
+    const p=document.createElement('p');p.textContent='Your email app should open with this enquiry filled in. If it doesn\'t, email info@cg-electricalservices.co.uk or call 01249 477744.';
+    const a=document.createElement('a');a.href=href;a.textContent='Open the email again';a.style.fontWeight='600';
+    o.append(p,a);o.classList.add('on');
+    location.href=href;
+  });
+}
+</script>
+</body>
+</html>

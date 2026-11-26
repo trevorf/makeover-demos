@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- Photos: all from Aircrew Electricians' own website (aircrew.biz)
+  img/kitchen.jpg   https://www.aircrew.biz/wp-content/uploads/electricians-wroughton-swindon-Aircrew.webp
+  img/venue.jpg     https://www.aircrew.biz/wp-content/uploads/electrician-events-venues.webp
+  img/lighting.jpg  https://www.aircrew.biz/wp-content/uploads/Aircrew-electricians-services-lighting.webp
+  img/security.jpg  https://www.aircrew.biz/wp-content/uploads/Aircrew-electricians-services-security.webp
+  img/wiring.jpg    https://www.aircrew.biz/wp-content/uploads/Aircrew-electricians-services-wiring.webp
+  img/fireplace.jpg https://www.aircrew.biz/wp-content/uploads/Aircrew-Electricians-Wroughton-Swindon.webp
+  img/plinth.jpg    https://www.aircrew.biz/wp-content/uploads/Aircrew-Electricians-Wroughton.webp
+  img/logo.png      rendered from https://www.aircrew.biz/wp-content/uploads/Aircrew-Electricians-Wroughton-Swindon.svg
+-->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Aircrew Electricians – website concept</title>
+<meta name="description" content="Aircrew Electricians: NICEIC approved electricians in Wroughton and Swindon. EV chargers, lighting, rewiring, repairs, security and EICR testing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Semi+Condensed:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: family electricians, three generations, safety-first and straight-talking.
+   IDEA: a flight-deck calm — clear, trustworthy, the number always in reach.
+   PICTURE: their own finished kitchen lighting in the hero, then real jobs from homes and venues.
+   COLOUR and TYPE: night-sky navy field, their logo red as the signal colour, warm landing-light amber for small details; Saira Semi Condensed + Source Sans 3.
+   LAYOUT: sticky call bar, navy hero, approvals strip, service grid, work gallery, promise band, commercial + area, contact, preview banner. */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#0b1220);--ink:light-dark(#121a2a,#e7ecf4);--soft:light-dark(#4a5568,#a7b1c2);
+--navy:#0f1d33;--navy2:#182b4a;--red:#d7141f;--red2:#b30f18;--amber:#f5b83d;
+--mist:light-dark(#f1f4f8,#121c2e);--card:light-dark(#ffffff,#141f33);--line:light-dark(#dfe4ec,#24324b)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Sans 3",system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:"Saira Semi Condensed","Source Sans 3",sans-serif;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.005em}
+h1{font-size:clamp(36px,5.6vw,60px);font-weight:700}
+h2{font-size:clamp(28px,3.6vw,42px);font-weight:700}
+h3{font-size:21px;font-weight:700}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto}
+.band{padding:clamp(44px,6vw,92px) max(5vw,18px)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font:700 14px/1 "Source Sans 3",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor}
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:#fff;color:var(--navy);padding:8px max(5vw,18px);box-shadow:0 1px 0 rgba(15,29,51,.1),0 6px 18px -12px rgba(15,29,51,.35)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:14px;line-height:1;text-decoration:none;border-radius:6px}
+.brand img{height:76px;width:auto;display:block}
+.brand span{font:700 15px/1.15 "Saira Semi Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border-left:2px solid #e5e8ee;padding-left:14px}
+.brand span small{display:block;font:500 13px/1.3 "Source Sans 3",sans-serif;letter-spacing:0;text-transform:none;color:#5a6577}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:12px 24px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:17px;cursor:pointer;font-family:inherit;transition:background .15s,transform .15s}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.call{background:var(--red);color:#fff}
+.call:hover{background:var(--red2)}
+.ghost{border-color:rgba(255,255,255,.55);color:#fff;background:transparent}
+.ghost:hover{background:rgba(255,255,255,.08)}
+.top .call{min-height:46px;padding:8px 18px;font-size:17px}
+.top .num{white-space:nowrap}
+/* hero */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,#22406b 0,transparent 60%),var(--navy);color:#fff;padding-bottom:0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,56px);align-items:end}
+.hero .copy{padding-bottom:clamp(40px,6vw,84px)}
+.hero .eyebrow{color:var(--amber)}
+.hero p.lead{font-size:20px;color:#cdd6e4;margin:20px 0 30px;max-width:32em}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px}
+.hero small{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:22px;color:#aebad0;font-size:15px}
+.hero small b{color:#fff;font-weight:600}
+.scene{margin:0;position:relative;aspect-ratio:5/4;width:100%;border-radius:20px 20px 0 0;overflow:hidden;background:var(--navy2)}
+.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.scene figcaption{position:absolute;left:14px;bottom:14px;background:rgba(10,18,32,.8);backdrop-filter:blur(4px);color:#fff;font-size:14px;font-weight:600;padding:8px 12px;border-radius:8px}
+/* approvals strip */
+.approvals{background:var(--mist);border-bottom:1px solid var(--line);padding:22px max(5vw,18px)}
+.approvals ul{list-style:none;margin:0 auto;padding:0;max-width:1180px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 24px}
+.approvals li{display:flex;gap:12px;align-items:center;font-size:15px;line-height:1.3;color:var(--soft)}
+.approvals b{display:block;color:var(--ink);font-size:16px}
+.approvals a{text-underline-offset:3px}
+.badge{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--card);border:1.5px solid var(--line);color:var(--red)}
+.badge svg{width:20px;height:20px}
+/* services */
+.svc-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,4vw,56px);align-items:end}
+.svc-head p{color:var(--soft)}
+.grid{margin-top:36px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 20px 24px;display:flex;flex-direction:column;gap:10px}
+.card .ic{width:46px;height:46px;border-radius:12px;background:color-mix(in srgb,var(--red) 10%,transparent);color:var(--red);display:grid;place-items:center;margin-bottom:4px}
+.card .ic svg{width:24px;height:24px}
+.card p{color:var(--soft);font-size:16px;line-height:1.5}
+.card.feature{background:var(--navy);border-color:var(--navy);color:#fff}
+.card.feature p{color:#c3cde0}
+.card.feature .ic{background:rgba(245,184,61,.16);color:var(--amber)}
+/* gallery */
+.work{background:var(--mist)}
+.work .head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px}
+.work .head p{color:var(--soft);max-width:30em}
+.gal{margin-top:30px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(2,260px);gap:14px}
+.gal figure{margin:0;position:relative;border-radius:14px;overflow:hidden;background:var(--line)}
+.gal .g1{grid-column:span 2;grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;display:block}
+.gal figcaption{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(10,18,32,.82);color:#fff;font-size:14px;font-weight:600;padding:8px 12px;border-radius:8px;width:fit-content;max-width:calc(100% - 20px)}
+/* promise */
+.promise .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.quote{font-family:"Saira Semi Condensed",sans-serif;font-size:clamp(27px,3.2vw,38px);line-height:1.15;font-weight:600;margin:0;padding-left:22px;border-left:4px solid var(--red)}
+.quote cite{display:block;font:500 16px/1.4 "Source Sans 3",sans-serif;color:var(--soft);margin-top:16px;font-style:normal}
+.promise .body{color:var(--soft);margin-top:22px;max-width:34em}
+.facts{display:grid;gap:18px}
+.fact{display:flex;gap:16px;align-items:flex-start}
+.fact b{display:block;font-size:18px}
+.fact span{color:var(--soft);font-size:16px}
+.tick{flex:none;width:28px;height:28px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;margin-top:1px}
+.tick svg{width:16px;height:16px}
+/* commercial + area */
+.biz{background:var(--navy);color:#fff}
+.biz .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+.biz .eyebrow{color:var(--amber)}
+.biz p{color:#c3cde0;margin-top:14px}
+.pins{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.pins span{padding:8px 15px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);font-weight:600;font-size:16px}
+.pins.home span:first-child{background:var(--red);border-color:var(--red)}
+.biz h3{margin-top:34px;font-size:22px}
+.map{margin:0;aspect-ratio:4/3;position:relative;border-radius:18px;overflow:hidden}
+.map img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px)}
+.contact .intro p{color:var(--soft);margin-top:14px}
+.big-call{display:block;margin-top:26px;padding:20px 22px;border-radius:14px;background:var(--red);color:#fff;text-decoration:none}
+.big-call small{display:block;font-size:15px;opacity:.9}
+.big-call strong{font:700 clamp(30px,4vw,40px)/1.1 "Saira Semi Condensed",sans-serif;letter-spacing:.01em}
+.contact dl{margin:24px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px 20px}
+.contact dt{color:var(--soft)}
+.contact dd{margin:0;font-weight:600}
+.contact dd a{text-decoration-color:var(--red);text-underline-offset:4px;overflow-wrap:anywhere}
+form{background:var(--mist);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,34px);display:grid;gap:14px;align-content:start}
+label{display:grid;gap:6px;font-weight:600;font-size:15px}
+input,textarea,select{font:16px/1.4 "Source Sans 3",sans-serif;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);min-height:50px;width:100%}
+textarea{min-height:120px;resize:vertical}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+form .btn{background:var(--navy);color:#fff;width:100%}
+:root:not([data-theme=light]) form .btn{background:light-dark(var(--navy),var(--red))}
+form .note{font-size:14px;color:var(--soft)}
+.out{display:none;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:15px}
+.out.on{display:block}
+/* footer */
+footer{padding:30px max(5vw,18px) 0;color:var(--soft);font-size:15px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;padding-bottom:26px}
+.preview{background:var(--amber);color:#1b1607;text-align:center;padding:12px max(5vw,18px);font-size:15px;font-weight:600}
+@media(max-width:980px){
+.grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.approvals ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:860px){
+.hero .wrap,.svc-head,.promise .wrap,.biz .wrap,.contact .wrap{grid-template-columns:minmax(0,1fr)}
+.hero .copy{padding-bottom:6px}
+.scene{aspect-ratio:4/3}
+.gal{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:200px}
+.gal .g1{grid-column:span 2;grid-row:span 1;}
+.brand span{display:none}
+}
+@media(max-width:520px){
+.brand img{height:58px}
+.top .num{display:none}
+.row2{grid-template-columns:minmax(0,1fr)}
+.hero .acts .btn{flex:1 1 100%}
+.grid{grid-template-columns:minmax(0,1fr)}
+.approvals ul{grid-template-columns:minmax(0,1fr)}
+.gal{grid-auto-rows:170px}
+.card{display:grid;grid-template-columns:46px minmax(0,1fr);column-gap:14px;row-gap:4px;padding:18px}
+.card .ic{grid-row:span 2;margin:0}
+.card h3{font-size:19px;align-self:end}
+.gal figcaption{font-size:13px;padding:6px 9px;left:8px;bottom:8px}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#top"><img src="img/logo.png" width="503" height="150" alt="Aircrew Electricians"><span>Aircrew Electricians<small>Wroughton, Swindon</small></span></a>
+  <a class="btn call" href="tel:07780112479" aria-label="Call 07780 112479"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.6a1 1 0 0 1-.25 1z"/></svg>Call <span class="num">07780 112479</span></a>
+</div></header>
+
+<section class="band hero" id="top"><div class="wrap">
+  <div class="copy">
+    <span class="eyebrow">NICEIC approved electricians</span>
+    <h1>Electricians in Wroughton and Swindon</h1>
+    <p class="lead">Home and commercial electrical work: new installations, upgrades, maintenance and emergency repairs. A family business with three generations of electricians, and we never take payment until you're completely satisfied.</p>
+    <div class="acts">
+      <a class="btn call" href="tel:07780112479"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.6a1 1 0 0 1-.25 1z"/></svg>Call 07780 112479</a>
+      <a class="btn ghost" href="#quote">Get a free quote</a>
+    </div>
+    <small><span><b>Mon–Fri</b> 9am to 5pm</span><span><b>Email</b> kate@aircrew.biz</span></small>
+  </div>
+  <figure class="scene"><img src="img/kitchen.jpg" width="1280" height="641" alt="Kitchen extension with recessed ceiling downlights and two glass pendant lights over the dining table, bi-fold doors to the garden" fetchpriority="high"><figcaption>Kitchen extension lighting, by Aircrew</figcaption></figure>
+</div></section>
+
+<section class="approvals" aria-label="Approvals"><ul>
+  <li><i class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></i><div><b>NICEIC Approved Contractor</b>Listed on the NICEIC register</div></li>
+  <li><i class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M13 12l-3 4h4l-3 4"/></svg></i><div><b>NICEIC Domestic Installer</b>Approved for domestic work</div></li>
+  <li><i class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></i><div><b>Buy With Confidence</b><a href="https://www.buywithconfidence.gov.uk/profile/aircrew-electricians/17481/">Trading Standards approved</a></div></li>
+  <li><i class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M15 14.5c3 0 6 2 6 5.5"/></svg></i><div><b>Family business</b>Three generations, since 1966</div></li>
+</ul></section>
+
+<section class="band" id="services"><div class="wrap">
+  <div class="svc-head">
+    <div><span class="eyebrow">Electrical services</span><h2>Everything electrical, for homes and businesses</h2></div>
+    <p>Safety is our number one priority. We never cut corners or take shortcuts, and all of our work is guaranteed and complies with the highest industry standards.</p>
+  </div>
+  <div class="grid">
+    <article class="card feature"><i class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="10" height="18" rx="2"/><path d="M10 8l-2 4h3l-2 4"/><path d="M14 9h2a2 2 0 0 1 2 2v5a2 2 0 0 0 4 0V8l-2-2"/></svg></i><h3>EV charger installation</h3><p>Electric vehicle charge points for homes and businesses, installed safely by certified installers.</p></article>
+    <article class="card"><i class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></i><h3>Lighting</h3><p>Lighting design, alterations, repairs and upgrades. We can also fit fittings you've bought yourself.</p></article>
+    <article class="card"><i class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h4a4 4 0 0 1 4 4v2a4 4 0 0 0 4 4h4"/><path d="M2 5v4M2 7h2"/><path d="M22 15v4M20 17h2"/></svg></i><h3>Wiring and rewires</h3><p>New circuits and full rewires by a certified expert, so you have guaranteed peace of mind.</p></article>
+    <article class="card"><i class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V4h6v7"/><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M12 14v4"/></svg></i><h3>EICR testing</h3><p>Inspection, testing and reports for landlords, rental properties and home buyers.</p></article>
+    <article class="card"><i class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h13l4 4-4 4H3z"/><circle cx="7" cy="11" r="1.4"/><path d="M5 19h10"/></svg></i><h3>Security and fire alarms</h3><p>CCTV, motion sensors, secure access, and home and fire alarm systems.</p></article>
+    <article class="card"><i class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg></i><h3>Repairs</h3><p>An honest opinion on whether to repair or replace, with an estimate so you can decide on budget.</p></article>
+    <article class="card"><i class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8M12 18v4M7 9h4M7 13h7"/></svg></i><h3>Installation</h3><p>New and re-installed appliances fitted properly from the start, saving time and money.</p></article>
+    <article class="card"><i class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M4.9 4.9l14.2 14.2M2 12h20M4.9 19.1L19.1 4.9"/><circle cx="12" cy="12" r="3"/></svg></i><h3>Heating and air con</h3><p>Installation and regular maintenance of heaters and air conditioning units.</p></article>
+  </div>
+</div></section>
+
+<section class="band work" id="work"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow">Recent work</span><h2>Real jobs, finished properly</h2></div>
+    <p>From festoon lighting in a wedding barn to a first-fix rewire, a few of the jobs we've done.</p>
+  </div>
+  <div class="gal">
+    <figure class="g1"><img src="img/venue.jpg" width="1280" height="719" loading="lazy" alt="Timber-beamed wedding venue lit with festoon lighting above long banqueting tables"><figcaption>Festoon lighting at a wedding venue</figcaption></figure>
+    <figure><img src="img/fireplace.jpg" width="1200" height="1203" loading="lazy" alt="Living room with a three-sided electric fireplace set into a chimney breast below a wall-mounted TV"><figcaption>Electric fireplace</figcaption></figure>
+    <figure><img src="img/security.jpg" width="1280" height="853" loading="lazy" alt="Dome and bullet CCTV cameras mounted on the brick corner of a building"><figcaption>CCTV installation</figcaption></figure>
+    <figure><img src="img/lighting.jpg" width="1280" height="851" loading="lazy" alt="Bathroom with low-level LED floor lights beside a wall-hung toilet"><figcaption>Bathroom floor lights</figcaption></figure>
+    <figure><img src="img/plinth.jpg" width="640" height="641" loading="lazy" alt="Kitchen with LED plinth lights set into the base of the cabinets above a stone floor"><figcaption>Kitchen plinth lights</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="band promise" id="why"><div class="wrap">
+  <div>
+    <span class="eyebrow">Why Aircrew</span>
+    <p class="quote">"We never take payment until a customer is completely satisfied."<cite>The policy started by the family's first electrician in 1966, and still followed today</cite></p>
+    <p class="body">We're a family business, and we treat you as family too. We take pride in our work and treat every job as if it were our own home or office.</p>
+  </div>
+  <div class="facts">
+    <div class="fact"><i class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i><div><b>NICEIC and Trading Standards approved</b><span>NICEIC Approved Contractor and Domestic Installer, and a Buy With Confidence member.</span></div></div>
+    <div class="fact"><i class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i><div><b>All work guaranteed</b><span>Satisfaction guaranteed on every project, to the highest industry standards.</span></div></div>
+    <div class="fact"><i class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i><div><b>Trained, certified technicians</b><span>Led by Kate, our Director and Lead Engineer.</span></div></div>
+    <div class="fact"><i class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></i><div><b>Free quotations</b><span>Tell us what you need and we'll come back with a price.</span></div></div>
+  </div>
+</div></section>
+
+<section class="band biz" id="area"><div class="wrap">
+  <div>
+    <span class="eyebrow">Homes and businesses</span>
+    <h2>Commercial work too</h2>
+    <p>As well as homes, we install and maintain electrics for commercial clients across a wide range of buildings.</p>
+    <div class="pins"><span>Event venues</span><span>Offices</span><span>Bars and restaurants</span><span>Shopping centres</span><span>Residential homes</span><span>Museums and galleries</span></div>
+    <h3>Where we work</h3>
+    <p>Based on the High Street in Wroughton, covering Swindon and the surrounding counties.</p>
+    <div class="pins home"><span>Wroughton</span><span>Swindon</span><span>Wiltshire</span><span>Gloucestershire</span><span>Oxfordshire</span><span>Bristol</span></div>
+  </div>
+  <figure class="map"><img src="img/wiring.jpg" width="1280" height="851" loading="lazy" alt="Room stripped back for a rewire, with new cables dropped through the ceiling ready for downlights"></figure>
+</div></section>
+
+<section class="band contact" id="quote"><div class="wrap">
+  <div class="intro">
+    <span class="eyebrow">Free quotation</span>
+    <h2>Get a free quote</h2>
+    <p>No job is too small for professional care. Call, email, or send us a few details and we'll get back to you.</p>
+    <a class="big-call" href="tel:07780112479"><small>Tap to call</small><strong>07780 112479</strong></a>
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:kate@aircrew.biz">kate@aircrew.biz</a></dd>
+      <dt>Hours</dt><dd>Monday to Friday, 9am to 5pm</dd>
+      <dt>Address</dt><dd>86 High Street, Wroughton, Swindon SN4 9JZ</dd>
+    </dl>
+  </div>
+  <form id="qf" novalidate>
+    <h3>Tell us about the job</h3>
+    <div class="row2">
+      <label>Your name<input id="qn" name="name" autocomplete="name" required></label>
+      <label>Phone<input id="qp" name="phone" type="tel" autocomplete="tel"></label>
+    </div>
+    <label>Which service do you need?
+      <select id="qs" name="service"><option>EV charger</option><option>Lighting</option><option>Wiring or rewire</option><option>EICR inspection and testing</option><option>Security or fire alarms</option><option>Repairs</option><option>Installation</option><option>Heating or air con</option><option>Something else</option></select>
+    </label>
+    <label>A few details<textarea id="qd" name="details" placeholder="What you need doing, the type of property and your town"></textarea></label>
+    <button class="btn" type="submit">Email my enquiry</button>
+    <p class="note">This opens your own email app with your enquiry ready to send to kate@aircrew.biz.</p>
+    <div class="out" id="qo" role="status"></div>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Aircrew Electricians, 86 High Street, Wroughton, Swindon, Wiltshire SN4 9JZ</span>
+  <span><a href="tel:07780112479">07780 112479</a> · <a href="mailto:kate@aircrew.biz">kate@aircrew.biz</a></span>
+</div></footer>
+<div class="preview">Concept preview prepared for Aircrew Electricians by <a href="https://trevelyn.co.uk">Trevelyn</a>. Not the official website.</div>
+
+<script>
+{
+  const f=document.getElementById('qf'),o=document.getElementById('qo');
+  f.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>document.getElementById(id).value.trim();
+    const body=`Name: ${v('qn')}\nPhone: ${v('qp')}\nService: ${v('qs')}\n\n${v('qd')}`;
+    const href='mailto:kate@aircrew.biz?subject='+encodeURIComponent('Quote request: '+v('qs'))+'&body='+encodeURIComponent(body);
+    o.textContent='';
+    const p=document.createElement('p');p.textContent='Your email app should open with this enquiry filled in. Nothing has been sent yet. If it doesn\'t open, email kate@aircrew.biz or call 07780 112479.';
+    const a=document.createElement('a');a.href=href;a.textContent='Open the email again';a.style.fontWeight='600';
+    o.append(p,a);o.classList.add('on');
+    location.href=href;
+  });
+}
+</script>
+</body>
+</html>
