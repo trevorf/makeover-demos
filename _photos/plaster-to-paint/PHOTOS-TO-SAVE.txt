@@ -1,0 +1,7 @@
+Business: Plaster to Paint (Horsman Brothers Ltd)
+Website: https://plastertopaint.co.uk/
+Logo: (no logo image)
+Photos:
+(site images are slider GIFs, not their own work - job photos needed)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.

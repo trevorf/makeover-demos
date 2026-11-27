@@ -1,0 +1,13 @@
+Business: Berry's Roofing Limited
+Website: http://berrysroofing.co.uk/
+Logo: (no logo image; name set as text)
+Photos:
+http://berrysroofing.co.uk/images/berrys-roofing-van-wiltshire-glos.jpg
+http://berrysroofing.co.uk/images/cotswold-stone-tile-roof-repairs-2.jpg
+http://berrysroofing.co.uk/images/stone-roof-with-swept-valley-1.jpg
+http://berrysroofing.co.uk/images/natural-slate-roof-1.jpg
+http://berrysroofing.co.uk/images/clay-tile-roof-replacement-1.jpg
+http://berrysroofing.co.uk/images/cotswold-stone-tile-new-roof-1.jpg
+(site copies are tiny, 300px - larger versions preferred)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.

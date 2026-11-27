@@ -1,0 +1,9 @@
+Business: Abbeymead Plumbing and Heating Ltd
+Website: https://abbeymeadheating.co.uk/
+Logo: https://abbeymeadheating.co.uk/wp-content/themes/amh/images/amh_logo.png
+Photos:
+https://abbeymeadheating.co.uk/wp-content/themes/amh/images/examples.png
+https://abbeymeadheating.co.uk/wp-content/uploads/2019/03/1620799_281160465369497_620559708_n-1-300x300.jpg
+(more job photos needed)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.

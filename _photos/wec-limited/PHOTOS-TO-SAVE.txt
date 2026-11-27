@@ -1,0 +1,7 @@
+Business: Wilts Electrical Contracting Ltd (WEC)
+Website: https://www.weclimited.co.uk/
+Logo: (logo on their site - save it)
+Photos:
+(only stock + one solar photo on the site - job photos needed)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.

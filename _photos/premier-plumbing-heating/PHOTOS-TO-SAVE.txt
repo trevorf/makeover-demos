@@ -1,0 +1,10 @@
+Business: Premier Plumbing and Heating (Swindon) Limited
+Website: http://ppheating.co.uk/
+Logo: (no logo image; name set as text)
+Photos:
+http://ppheating.co.uk/wpimages/10faff47d9.jpg
+http://ppheating.co.uk/wpimages/519d49563af2.jpg
+http://ppheating.co.uk/wpimages/ecf1002d6cfb.jpg
+(these are small, 258px, and mostly promo banners - larger job photos needed)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.

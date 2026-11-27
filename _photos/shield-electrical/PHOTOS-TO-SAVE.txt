@@ -1,0 +1,7 @@
+Business: Shield Electrical Services Limited
+Website: https://shieldelectricalservices.co.uk/
+Logo: https://shieldelectricalservices.co.uk/wp-content/uploads/2025/02/logo-original-1.png
+Photos:
+(none suitable on their site - job photos needed)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.

@@ -1,0 +1,8 @@
+Business: Maintek Limited (Maintek Plumbing & Heating Services)
+Website: https://www.maintekservices.co.uk/
+Logo: (logo on their site - save it)
+Photos:
+https://www.maintekservices.co.uk/slideshow/image-1.jpg
+(site images look like stock - real job photos needed)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.

@@ -1,0 +1,7 @@
+Business: AGL Electrical (Services) Ltd
+Website: https://www.agl-electrical.co.uk/
+Logo: https://www.agl-electrical.co.uk/images/logo.png
+Photos:
+(none on their site - job photos needed, e.g. from Facebook)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.

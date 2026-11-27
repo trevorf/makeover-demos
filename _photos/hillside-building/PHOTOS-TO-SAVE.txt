@@ -1,0 +1,7 @@
+Business: Hillside Building Services (Swindon) Ltd
+Website: https://www.hillsidebuildingservices.com/
+Logo: (logo on their site - save it)
+Photos:
+(only 1 job photo on their site - more job photos needed)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.

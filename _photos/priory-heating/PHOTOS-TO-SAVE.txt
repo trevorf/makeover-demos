@@ -1,0 +1,7 @@
+Business: Priory Heating Ltd
+Website: https://www.prioryheating.co.uk
+Logo: https://www.prioryheating.co.uk/wp-content/uploads/2026/11/file_ts1790229865152b703796e-scaled.png
+Photos:
+(none on their site - Coming Soon page; save job photos from their Checkatrade profile or ask them)
+
+Save these images into this folder (any file names; put 'logo' in the logo's name). The next run builds the demo.
